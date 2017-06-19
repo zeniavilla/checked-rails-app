@@ -26,10 +26,12 @@ ActiveRecord::Schema.define(version: 20170619163416) do
     t.string "frequency_interval"
     t.integer "duration_repetition"
     t.datetime "duration_end_date"
-    t.integer "chore_id"
+    t.integer "user_id"
+    t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["chore_id"], name: "index_chores_on_chore_id"
+    t.index ["category_id"], name: "index_chores_on_category_id"
+    t.index ["user_id"], name: "index_chores_on_user_id"
   end
 
   create_table "teams", force: :cascade do |t|
