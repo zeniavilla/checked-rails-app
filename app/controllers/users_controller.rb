@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     end
 
     def new
-        super
+        @user = User.new
     end
 
     def create
@@ -17,15 +17,12 @@ class UsersController < ApplicationController
     end
 
     def edit
-        super
     end
 
     def update
-        super
     end
 
     def destroy
-        super
         redirect_to root_path
     end
 
