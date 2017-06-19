@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :create, :destroy, :update]
   get 'users/sign_up', to: 'users#new'
   get 'profile', to: 'users#show'
-  get 'profile/edit', to: 'users#edit'
+  get 'profile/:id/edit', to: 'users#edit', as: 'edit_profile'
 
   # sessions
   get '/sign_out', to: 'sessions#destroy'
   get '/sign_in', to: 'sessions#new'
+  post 'sign_in', to: 'sessions#create'
 
   resources :categories do
     resources :chores
