@@ -1,3 +1,4 @@
 class Chore < ApplicationRecord
-  belongs_to :chore
+  belongs_to :user
+  belongs_to :category
 end
