@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+    before_action :set_user, only: [:edit, :destroy]
+
     def index
     end
 
@@ -10,7 +12,8 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             session[:user_id] = @user.id
-            redirect_to edit_user_registration_path(@user)
+            flash[:success] = "Successfully signed up."
+            redirect_to edit_profile_path(@user)
         else
             render :new
         end
@@ -30,5 +33,9 @@ class UsersController < ApplicationController
 
     def user_params
         params.require(:user).permit(:email, :password, :team_attributes => [:name])
+    end
+
+    def set_user
+        @user = User.find_by(id: params[:id])
     end
 end
