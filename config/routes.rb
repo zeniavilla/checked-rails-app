@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
-  resources :users, except: :new
+  
+  #users
+  resources :users, only: [:index, :create, :destroy, :update]
   get 'users/sign_up', to: 'users#new'
+  get 'profile', to: 'users#show'
+  get 'profile/edit', to: 'users#edit'
 
   # sessions
-  get 'users/sign_out', to: 'sessions#destroy'
-  get 'users/sign_in', to: 'sessions#new'
+  get '/sign_out', to: 'sessions#destroy'
+  get '/sign_in', to: 'sessions#new'
 
   resources :categories do
     resources :chores
