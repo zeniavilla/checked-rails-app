@@ -3,12 +3,12 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <%= fields_for :team do |team| %>
+    <%= f.fields_for :team, @user.build_team do |team| %>
     <div class="field">
-      <%= team.label :name, 'Team Name' %><br />
+      <%= team.label :name, 'Team' %><br />
       <%= team.text_field :name %>
     </div>
-  <% end %>
+    <% end %>
 
   <div class="field">
     <%= f.label :email %><br />
