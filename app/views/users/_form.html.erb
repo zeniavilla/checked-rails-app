@@ -1,4 +1,5 @@
 <%= form_for(user) do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
 
   <div class="field">
     <%= f.label :name %><br />
@@ -34,6 +35,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit %>
   </div>
 <% end %>
