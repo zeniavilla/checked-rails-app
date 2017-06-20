@@ -2,11 +2,12 @@ class Chore < ApplicationRecord
   belongs_to :user
   belongs_to :category
 
-  before_create :set_category_default
+  before_create :set_defaults
 
   private
 
-  def set_category_default
+  def set_defaults
     self.category ||= "uncategorized"
+    self.active = true
   end
 end
