@@ -9,8 +9,10 @@ class User < ApplicationRecord
   validates_confirmation_of :password
 
   def team_attributes=(team_attributes)
-    team = Team.find_or_create_by(team_attributes)
-    self.team=(team)
-    self.save
+    if !team_attributes.values.first.blank?
+      team = Team.find_or_create_by(team_attributes)
+      self.team=(team)
+      self.save
+    end
   end
 end
