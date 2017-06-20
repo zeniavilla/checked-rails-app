@@ -1,0 +1,10 @@
+<h3><%= @category.title %></h3>
+
+<%= @chore.title %><br>
+<% if @chore.duration_end_date %>
+    End date: <%= @chore.duration_end_date.strftime("%A, %d %b %Y") %>
+<% end %>
+
+<% if @chore.frequency_amount && @chore.frequency_interval %>
+    Every <%= pluralize(@chore.frequency_amount, @chore.frequency_interval.gsub('s', '')) %>
+<% end %>

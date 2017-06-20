@@ -12,9 +12,10 @@ Rails.application.routes.draw do
   post 'sign_in', to: 'sessions#create'
 
   resources :categories do
-    resources :chores, except: [:new, :create]
+    resources :chores, except: [:new, :create, :index]
   end
 
+  get '/chores', to: 'chores#index', as: 'chores'
   get '/chores/new', to: 'chores#new', as: 'new_chore'
   post '/chores', to: 'chores#create'
 
