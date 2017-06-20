@@ -6,11 +6,17 @@ class ChoresController < ApplicationController
     end
     
     def create
-        raise params.inspect
         @chore = Chore.new(chore_params)
+        if @chore.save
+            flash[:success] = "Successfully saved chore."
+            redirect_to category_chore_path(@chore.category_id, @chore)
+        else
+            render :new
+        end
     end
 
     def show
+        @category = Category.find_by(id: params[:category_id])
     end
 
     def edit
@@ -29,6 +35,6 @@ class ChoresController < ApplicationController
     end
 
     def chore_params
-        params.require(:chore).permit(:title, :frequency_amount, :frequency_interval, :duration_end_date)
+        params.require(:chore).permit(:title, :frequency_amount, :frequency_interval, :duration_end_date, :category_attributes => [:title])
     end
 end

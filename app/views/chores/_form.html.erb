@@ -1,16 +1,23 @@
-<%= form_for(@chore) do |f| %>
+<%= form_for(chore) do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
 
     <div class="field">
         <%= f.label :title %><br>
         <%= f.text_field :title %>
     </div>
 
+    <%= f.fields_for :category, chore.build_category do |category| %>
+        <div class="field">
+            <%= category.label :title, 'Category' %><br>
+            <%= category.text_field :title %>
+        </div>
+    <% end %>
+
     <div class="field indent">
         <label>Frequency</label><br>
         Every
         <%= f.number_field :frequency_amount %>
-        <%= f.select :frequency_interval, [["days", 1], ["weeks", 2], ["months", 3], ["years", 4]] %>
-        <%= @chore.frequency_interval %>
+        <%= f.select :frequency_interval, [["select", ""],"days", "weeks", "months", "years"] %>
     </div>
 
     <div class="field">
