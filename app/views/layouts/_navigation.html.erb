@@ -1,10 +1,12 @@
 <nav>
     <ul>
-        <li><%= link_to "Home", root_path %></li>
         <% if user_signed_in? %>
+            <li><%= link_to "Home", chores_path %></li>
+            <li><%= link_to "Add Chore", new_chore_path %></li>
             <li><%=link_to "Profile", edit_profile_path(current_user) %></li>
             <li><%= link_to "Sign Out", sign_out_path %></li>
         <% else %>
+            <li><%= link_to "Home", root_path %></li>
             <li><%= link_to "Sign In", sign_in_path %></li>
             <li><%= link_to "Sign Up", users_sign_up_path %></li>
         <% end %>
