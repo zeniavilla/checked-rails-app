@@ -6,6 +6,8 @@ class ChoresController < ApplicationController
     end
     
     def create
+        raise params.inspect
+        @chore = Chore.new(chore_params)
     end
 
     def show
@@ -24,5 +26,9 @@ class ChoresController < ApplicationController
 
     def set_chore
         @chore = Chore.find_by(id: params[:id])
+    end
+
+    def chore_params
+        params.require(:chore).permit(:title, :frequency_amount, :frequency_interval, :duration_end_date)
     end
 end
