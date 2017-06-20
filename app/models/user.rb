@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   def team_attributes=(team_attributes)
     team = Team.find_or_create_by(team_attributes)
-    self.build_team(team_attributes)
+    self.team=(team)
     self.save
   end
 end
