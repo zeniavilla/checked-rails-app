@@ -2,13 +2,16 @@
 
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.email_field :name %>
+    <%= f.text_field :name %>
   </div>
 
   <%= f.fields_for :team, user.build_team do |team| %>
   <div class="field">
-    <%= team.label :name, 'Team' %><br />
-    <%= team.text_field :name %>
+    Team <%= team.label :name %><br />
+    <% if user_signed_in? && current_team %>
+      <% team_value = current_team.name %>
+    <% end %>
+    <%= team.text_field :name, value: team_value %>
   </div>
   <% end %>
 
