@@ -6,10 +6,12 @@
         <%= f.text_field :title %>
     </div>
 
-    <div class="field">
-        <label>Assign to</label><br>
-        <%= f.collection_select :user_id, current_team.users, :id, :email, prompt: true, class: 'collection-drop-down' %>
-    </div>
+    <% if current_team %>
+        <div class="field">
+            <label>Assign to</label><br>
+            <%= f.collection_select :user_id, current_team.users, :id, :email, prompt: true, selected: current_user.id, class: 'collection-drop-down' %>
+        </div>
+    <% end %>
 
     <%= f.fields_for :category, chore.build_category do |category| %>
         <div class="field">
