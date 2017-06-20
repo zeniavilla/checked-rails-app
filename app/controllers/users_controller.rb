@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :set_user, only: [:edit, :destroy]
+    before_action :set_user, only: [:edit, :update, :destroy]
 
     def index
     end
@@ -23,6 +23,13 @@ class UsersController < ApplicationController
     end
 
     def update
+        @user.assign_attributes(user_params)
+        if @user.save
+            flash[:success] = "Successfully updated profile."
+            redirect_to edit_profile_path(@user)
+        else
+            render :new
+        end
     end
 
     def destroy
