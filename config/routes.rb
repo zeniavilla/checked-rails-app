@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   #users
   resources :users, only: [:index, :create, :destroy, :update]
   get 'users/sign_up', to: 'users#new'
-  get 'profile', to: 'users#show'
   get 'profile/:id/edit', to: 'users#edit', as: 'edit_profile'
+  put 'profile/:id', to: 'users#update'
 
   # sessions
   get '/sign_out', to: 'sessions#destroy'
