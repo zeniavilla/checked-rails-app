@@ -16,8 +16,57 @@
  *= require icomoon-free/style
  */
 
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
-nav li {
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+body {
+    background: #f4f4f4;
+    font: 15px/100% Lato, sans-serif;
+    margin: 0;
+}
+
+main {
+    background: #fff;
+    border: 1px solid #ececec;
+    margin: 0 auto;
+    max-width: 1300px;
+    padding: 60px;
+}
+
+nav {
+    background-color: #0BD7E5;
+    margin: 0 0 2% 0;
+    overflow: hidden;
+}
+
+nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
     display: inline-block;
-    margin-right: 25px;
+    list-style-type: none;
+}
+
+nav ul li a {
+    color: white;
+    display: block;
+    line-height: 3em;
+    padding: 1em 3em;
+}
+
+nav ul li a:hover {
+    border-bottom: 5px solid #15FF70;
+    color: #15FF70;
+    padding-bottom: 10px;
+}
+
+nav ul li:first-child {
+    margin-right: auto;
 }
