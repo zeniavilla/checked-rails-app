@@ -1,0 +1,12 @@
+<table class="list-field">
+        <tr>
+            <th></th>
+            <th>Chore</th>
+            <th>Category</th>
+            <th><%= fa_icon "user" %></i></th>
+            <th>From</th>
+            <th>Until</th>
+            <th>Frequency</th>
+        </tr>
+    <%= render partial: 'chores/chore', collection: @team.chores %>
+    </table>
