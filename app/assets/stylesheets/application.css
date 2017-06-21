@@ -70,3 +70,8 @@ nav ul li a:hover {
 nav ul li:first-child {
     margin-right: auto;
 }
+
+h2 {
+    color: #10E8D2;
+    font: 300 3em/100% Lato, sans-serif;
+}
