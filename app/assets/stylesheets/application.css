@@ -77,8 +77,12 @@ h2 {
     font: 300 3em/100% Lato, sans-serif;
 }
 
-.field {
+.field, .alert.alert-error {
     margin-bottom: 2%;
+}
+
+.field_with_errors { 
+    display: inline; 
 }
 
 .field i {
