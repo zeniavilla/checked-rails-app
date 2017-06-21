@@ -5,7 +5,9 @@
             <li><%= link_to new_chore_path do %>
                     <%= fa_icon "plus" %>
                 <% end %></li>
-            <li><%=link_to "Profile", edit_profile_path(current_user) %></li>
+            <li><%= link_to edit_profile_path(current_user) do %>
+                    <%= fa_icon "user" %>
+                <% end %></li>
             <li><%= link_to "Sign Out", sign_out_path %></li>
         <% else %>
             <li><%= link_to "Home", root_path %></li>

@@ -38,6 +38,10 @@ main {
     text-align: center;
 }
 
+i.fa {
+    font-size: 1.4em;
+}
+
 nav {
     background-color: #0BD0DE;
     margin: 0 0 2% 0;
@@ -87,7 +91,6 @@ h2 {
 
 .field i {
     color: #01D979;
-    font-size: 1.5em;
     width: 2em;
 }
 
