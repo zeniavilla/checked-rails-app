@@ -15,4 +15,8 @@ class User < ApplicationRecord
       self.save
     end
   end
+
+  def overdue_chores
+    Chore.overdue.where('user_id IS ?', self.id)
+  end
 end

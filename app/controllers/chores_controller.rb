@@ -1,6 +1,12 @@
 class ChoresController < ApplicationController
     before_action :set_chore, only: [:show, :edit, :update]
-
+    before_action :set_category, only: [:show, :edit, :update]
+    
+    def index
+        @chores = current_user.chores.all
+        @overdue_chores = current_user.overdue_chores
+    end
+    
     def new
         @chore = Chore.new
     end
@@ -34,6 +40,10 @@ class ChoresController < ApplicationController
 
     def set_chore
         @chore = Chore.find_by(id: params[:id])
+    end
+
+    def set_category
+        @category = Category.find_by(id: params[:category_id])
     end
 
     def chore_params

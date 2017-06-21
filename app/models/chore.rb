@@ -15,6 +15,10 @@ class Chore < ApplicationRecord
     end
   end
 
+  def self.overdue
+    where('duration_end_date < ?', DateTime.now)
+  end
+
   private
 
   def set_defaults
