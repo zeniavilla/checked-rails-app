@@ -10,7 +10,11 @@ class SessionsController < ApplicationController
             flash[:success] = "Successfully signed in."
             redirect_to root_path
         else
-            flash[:error] = "The email and password combination could not be found."
+            if !user
+                flash[:error] = "An account with the email '#{params[:email]}' doesn't exist."
+            elsif !user.authenticate(params[:password])
+                flash[:error] = "Wrong password."
+            end
             render :new
         end
     end
