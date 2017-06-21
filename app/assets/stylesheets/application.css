@@ -110,3 +110,15 @@ h2 {
 .btn-primary:hover {
     background: #6FD7E5;
 }
+
+.flash.success {
+    background: #e6ffe6;
+    color: #228B22;
+    padding: 15px;
+}
+
+.flash.failure, .flash.error, .alert.error-message {
+    background: #fde8ec;
+    color: #bb1133;
+    padding: 15px;
+}
