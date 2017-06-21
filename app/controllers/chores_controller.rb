@@ -24,13 +24,19 @@ class ChoresController < ApplicationController
     end
 
     def show
-        @category = Category.find_by(id: params[:category_id])
     end
 
     def edit
     end
 
     def update
+        @chore.assign_attributes(chore_params)
+        if @chore.save
+            flash[:success] = "Successfully updated chore."
+            redirect_to category_chore_path(@chore.category_id, @chore)
+        else
+            render :edit
+        end
     end
     
     def destroy
