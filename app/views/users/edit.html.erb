@@ -1,3 +1,7 @@
-<h2><%= @user.name %>'s Profile</h2>
+<div class="avatar-circle">
+    <span class="initials">
+        <%= create_initials(@user) %>
+    </span>
+</div>
 
 <%= render 'form', user: @user %>
