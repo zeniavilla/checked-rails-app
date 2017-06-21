@@ -2,36 +2,33 @@
 <%= render 'shared/error_messages', object: f.object %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.label :name, "<i class='fa fa-user' aria-hidden='true'></i>".html_safe %>
+    <%= f.text_field :name, placeholder: "Your name", class: "text-field" %>
   </div>
 
   <%= f.fields_for :team, user.build_team do |team| %>
   <div class="field">
-    Team <%= team.label :name %><br />
+    <%= team.label :name, "<i class='fa fa-users' aria-hidden='true'></i>".html_safe %>
     <% if user_signed_in? && current_team %>
       <% team_value = current_team.name %>
     <% end %>
-    <%= team.text_field :name, value: team_value %>
+    <%= team.text_field :name, value: team_value, placeholder: "Team name (optional)", class: "text-field" %>
   </div>
   <% end %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email %>
+    <%= f.label :email, "<i class='fa fa-envelope-o' aria-hidden='true'></i>".html_safe %>
+    <%= f.email_field :email, placeholder: "Email", class: "text-field" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password %>
+    <%= f.label :password, "<i class='fa fa-unlock-alt' aria-hidden='true'></i>".html_safe %>
+    <%= f.password_field :password, placeholder: "Password", class: "text-field" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %>
+    <%= f.label :password_confirmation, "<i class='fa fa-unlock-alt' aria-hidden='true'></i>".html_safe %>
+    <%= f.password_field :password_confirmation, placeholder: "Confirm password", class: "text-field" %>
   </div>
 
   <div class="actions">

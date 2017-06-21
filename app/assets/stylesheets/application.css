@@ -25,7 +25,7 @@ a {
 
 body {
     background: #f4f4f4;
-    font: 15px/100% Lato, sans-serif;
+    font: 16px/100% Lato, sans-serif;
     margin: 0;
 }
 
@@ -35,6 +35,7 @@ main {
     margin: 0 auto;
     max-width: 1300px;
     padding: 60px;
+    text-align: center;
 }
 
 nav {
@@ -74,4 +75,21 @@ nav ul li:first-child {
 h2 {
     color: #10E8D2;
     font: 300 3em/100% Lato, sans-serif;
+}
+
+.field {
+    margin-bottom: 1%;
+}
+
+.field i {
+    color: #01E882;
+    font-size: 1.5em;
+    width: 2em;
+}
+
+.text-field {
+    font: 300 1.3em/100% Lato, sans-serif;
+    height: 40px;
+    padding-left: 20px;
+    width: 300px;
 }
