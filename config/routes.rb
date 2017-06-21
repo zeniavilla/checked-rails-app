@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get '/chores/new', to: 'chores#new', as: 'new_chore'
   post '/chores', to: 'chores#create'
 
-  resources :team, only: :create
+  resources :teams, only: :show
 
   root 'static#index'
 end
