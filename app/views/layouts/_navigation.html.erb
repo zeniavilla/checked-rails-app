@@ -2,7 +2,9 @@
     <ul>
         <% if user_signed_in? %>
             <li><%= link_to "Home", chores_path %></li>
-            <li><%= link_to "Add Chore", new_chore_path %></li>
+            <li><%= link_to new_chore_path do %>
+                    <%= fa_icon "plus" %>
+                <% end %></li>
             <li><%=link_to "Profile", edit_profile_path(current_user) %></li>
             <li><%= link_to "Sign Out", sign_out_path %></li>
         <% else %>
