@@ -10,10 +10,8 @@ class ChoresController < ApplicationController
         @chore = Chore.new
     end
     
-    def create
-        user = User.find_by(id: params[:chore][:user_id])
-        
-        @chore = user.chores.build(chore_params)
+    def create        
+        @chore = current_user.chores.build(chore_params)
         if @chore.save
             flash[:success] = "Successfully saved chore."
             redirect_to category_chore_path(@chore.category_id, @chore)
