@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/sign_in', to: 'sessions#new'
   post 'sign_in', to: 'sessions#create'
 
-  resources :categories do
+  resources :categories, except: [:index] do
     resources :chores, except: [:new, :create, :index]
   end
 
