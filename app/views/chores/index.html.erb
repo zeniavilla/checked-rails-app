@@ -1,6 +1,13 @@
+<% if user_signed_in? %>
+        <%= render 'layouts/sidebar' %>
+      <% end %>
+      
 <% if @chores.empty? %>
-    You do not currently have any chores. 
+    <div class="no-chores-text col-med">
+        You do not currently have any chores.
+    </div>
 <% else %>
+
 
     <table class="list-field">
         <tr>
