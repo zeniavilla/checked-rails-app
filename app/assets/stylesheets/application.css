@@ -100,7 +100,7 @@ h2 {
     width: 2em;
 }
 
-.text-field {
+.text-field, select {
     border-left: none;
     border-right: none;
     border-top: none;
@@ -109,6 +109,20 @@ h2 {
     height: 40px;
     padding-left: 20px;
     width: 300px;
+}
+
+select {
+    background: #fff;
+    color: #757575;
+    width: 320px;
+}
+
+select#chore_frequency_interval {
+    margin-left: 50px;
+}
+
+input#chore_duration_end_date {
+    color: #757575;
 }
 
 .btn-primary {
@@ -183,6 +197,7 @@ th, td {
 
 .col-med {
     float: left;
+    margin: 0 auto;
     margin-left: 3%;
     margin-right: 3%;
     width: 71.5%;
