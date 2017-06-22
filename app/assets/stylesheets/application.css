@@ -200,7 +200,7 @@ table {
 }
 
 th, td {
-    padding: 15px 30px;
+    padding: 15px 25px;
 }
 
 .col-med {
@@ -216,4 +216,13 @@ th, td {
     border-radius: 50%;
     height: 15px;
     width: 15px;
+}
+
+.check-button i {
+    color: #c7c9cc;
+    font-size: 2.3em;
+}
+
+.check-button i:hover {
+    color: #09C290;
 }
