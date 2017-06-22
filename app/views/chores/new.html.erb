@@ -1,3 +1,5 @@
 <h2>Add A Chore</h2>
 
-<%= render 'form', chore: @chore %>
+<%= form_for(@chore) do |f| %>
+    <%= render partial: 'form', locals: {chore: @chore, f: f} %>
+<% end %>

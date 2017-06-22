@@ -3,7 +3,7 @@ class ChoresController < ApplicationController
     before_action :set_category, only: [:show, :edit, :update]
     
     def index
-        @chores = current_user.chores.all.where("active IS ?", true)
+        @chores = current_user.my_active_chores
     end
     
     def new
