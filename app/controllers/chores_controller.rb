@@ -4,7 +4,6 @@ class ChoresController < ApplicationController
     
     def index
         @chores = current_user.chores.all
-        @overdue_chores = current_user.overdue_chores
     end
     
     def new
