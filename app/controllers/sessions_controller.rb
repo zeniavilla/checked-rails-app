@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id
             flash[:success] = "Successfully signed in."
-            redirect_to root_path
+            redirect_to chores_path
         else
             if !user
                 flash[:error] = "An account with the email '#{params[:email]}' doesn't exist."
