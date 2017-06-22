@@ -1,8 +1,22 @@
 <div class="sidebar">
     <ul>
+        <% if current_team %>
+            <li class="blue-names">
+                <%= current_owner.class.name + " " + current_team.name %>
+            </li>
+        <% end %>
+        <li class="blue-names">
+            Hello, <%= current_user.name %>
+        </li>
         <li>Add Chore</li>
-        <li>View Team's chores</li>
         <li>Categories:</li>
-            <%= render partial: 'categories/category', collection: Category.all %>
+
+            <%= render partial: 'categories/category', collection: current_owner.categories %>
+        <li>
+            <%= form_for Category.new, url: url_for(controller: "categories", action: "create") do |f| %>
+                <%= f.text_field :title, placeholder: "New Category", class: "text-field-sidebar" %>
+                <%= f.submit class: "btn-sidebar" %>
+            <% end %>
+        </li>
     </ul>
 </div>

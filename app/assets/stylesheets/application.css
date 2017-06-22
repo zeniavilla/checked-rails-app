@@ -19,8 +19,8 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
 a {
-    text-decoration: none;
     cursor: pointer;
+    text-decoration: none;
 }
 
 body {
@@ -53,7 +53,7 @@ i.fa.fa-exclamation-circle {
 }
 
 nav {
-    background-color: #0BD0DE;
+    background-color: #0bd0de;
     margin: 0 0 2% 0;
     overflow: hidden;
 }
@@ -134,7 +134,7 @@ input#chore_duration_end_date {
 }
 
 .btn-primary {
-    background: #0BD0DE;
+    background: #0bd0de;
     border: none;
     color: #fff;
     cursor: pointer;
@@ -188,11 +188,28 @@ input#chore_duration_end_date {
 }
 
 .sidebar ul {
+    list-style: none;
     margin: 0;
+    padding-left: 10px;
 }
 
 .sidebar li {
+    margin-bottom: 10px;
     text-align: left;
+}
+
+.sidebar li a {
+    color: #757575;
+}
+
+.sidebar li a:hover {
+    border-bottom: 3px solid #0bd0de;
+    transition: .3s;
+}
+
+li.blue-names {
+    color: #0bd0de;
+    font-size: 18px;
 }
 
 table {
