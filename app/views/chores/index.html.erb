@@ -2,17 +2,19 @@
         <%= render 'layouts/sidebar' %>
       <% end %>
 
-<% if @chores.empty? %>
-    <div class="no-chores-text col-med">
-        You do not currently have any chores.
+<div class="col-med">
+    <% if @chores.empty? %>
+        <div class="no-chores-text">
+            You do not currently have any chores.
+        </div>
+    <% else %>
+
+        <h2><%= current_user.name %>'s Chores</h2>
+        <%= render 'categories/category_header' %>
+        <%= render @chores %>
+        </table>
     </div>
-<% else %>
 
 
-    <%= render 'categories/category' %>
-    <%= render @chores %>
-    </table>
+    <% end %>
 </div>
-
-
-<% end %>
