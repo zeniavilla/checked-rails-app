@@ -8,8 +8,11 @@ class User < ApplicationRecord
   has_secure_password
   validates_confirmation_of :password
 
-  validates :email, presence: true, uniqueness: true
-  validates :name, presence: true
+  validates :password_confirmation, presence: { message: "Password confirmation doesn't match."}
+
+  validates :email, presence: { message: "Please enter your email address." }
+  validates :email, uniqueness: { message: "That email address is already registered."}
+  validates :name, presence: { message: "Please enter your name." }
 
   def team_attributes=(team_attributes)
     if !team_attributes.values.first.blank?

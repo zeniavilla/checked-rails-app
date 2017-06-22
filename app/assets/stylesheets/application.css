@@ -241,7 +241,7 @@ td:nth-child(8), td:nth-child(9), td:nth-child(10) {
 }
 
 .category-color-circle {
-    background: gold;
+    background: #ffd700;
     border-radius: 50%;
     height: 15px;
     width: 15px;

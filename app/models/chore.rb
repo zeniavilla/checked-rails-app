@@ -4,9 +4,9 @@ class Chore < ApplicationRecord
 
   after_initialize :set_defaults
 
-  validates :title, presence: true
-  validates :frequency_interval, presence: false, unless: :frequency_amount?
-  validates :frequency_amount, presence: false, unless: :frequency_interval?
+  validates :title, presence: { message: "Chore name needed." }
+  validates :frequency_interval, presence: { message: "Please select a repeat interval or delete the repeat amount." }, if: :frequency_amount?
+  validates :frequency_amount, presence: { message: "Please enter a repeat amount or clear the repeat interval." }, if: :frequency_interval?
 
   def category_attributes=(category_attributes)
     if !category_attributes.values.first.blank?
