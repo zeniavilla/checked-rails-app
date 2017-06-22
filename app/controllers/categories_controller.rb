@@ -12,9 +12,8 @@ class CategoriesController < ApplicationController
         @category = Category.new(category_params)
         if @category.save
             flash[:success] = "Category successfully created"
-            redirect_to categories_path
+            redirect_to category_path(@category.id)
         else
-            # flash[:error] = "Title can't be blank."
             render :new
         end
     end
