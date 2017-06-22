@@ -1,5 +1,5 @@
 class ChoresController < ApplicationController
-    before_action :set_chore, only: [:show, :edit, :update, :checked]
+    before_action :set_chore, only: [:show, :edit, :update, :checked, :destroy]
     before_action :set_category, only: [:show, :edit, :update]
     
     def index
@@ -39,6 +39,9 @@ class ChoresController < ApplicationController
     end
     
     def destroy
+        @chore.destroy
+        flash[:success] = "Successfully deleted chore."
+        redirect_to chores_path
     end
 
     def checked
