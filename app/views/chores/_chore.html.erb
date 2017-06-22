@@ -9,9 +9,15 @@
                 <%= chore.duration_end_date.strftime("%a, %d %b %Y") %>
             <% else %>
                 Forever
-            <% end %></td>
+            <% end %>
+        </td>
 
         <td><% if chore.frequency_amount && chore.frequency_interval %>
             Every <%= pluralize(chore.frequency_amount, chore.frequency_interval.gsub('s', '')) %>
-            <% end %></td>
+            <% end %>
+        </td>
+        <td><% if !current_user.overdue_chores.empty? %>
+            Overdue
+            <% end %>
+        </td>
     </tr>
