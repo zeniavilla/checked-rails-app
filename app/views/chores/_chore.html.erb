@@ -16,7 +16,7 @@
             Every <%= pluralize(chore.frequency_amount, chore.frequency_interval.gsub('s', '')) %>
             <% end %>
         </td>
-        <td><% if !current_user.overdue_chores.empty? %>
+        <td><% if current_user.overdue_chores.find_by(id: chore.id) %>
             <%= fa_icon "exclamation-circle" %>
             <% end %>
         </td>
