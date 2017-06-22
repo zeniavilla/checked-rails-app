@@ -48,6 +48,10 @@ i.fa {
     font-size: 1.4em;
 }
 
+i.fa.fa-exclamation-circle {
+    color: #dc143c;
+}
+
 nav {
     background-color: #0BD0DE;
     margin: 0 0 2% 0;
@@ -98,6 +102,10 @@ h2 {
 .field i {
     color: #01D979;
     width: 2em;
+}
+
+.category-header i {
+    color: #09C290;
 }
 
 .text-field, select {
