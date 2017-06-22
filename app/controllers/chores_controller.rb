@@ -21,9 +21,11 @@ class ChoresController < ApplicationController
     end
 
     def show
+        current_user_only
     end
 
     def edit
+        current_user_only
     end
 
     def update
@@ -43,6 +45,13 @@ class ChoresController < ApplicationController
         @chore.update(active: false)
         flash[:success] = "You've just completed a chore!"
         redirect_to chores_path
+    end
+
+    def current_user_only
+        if @chore.user != current_user
+            flash[:error] = "You can only view/edit your own chores."
+            redirect_to chores_path
+        end
     end
     
     private
