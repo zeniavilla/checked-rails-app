@@ -3,15 +3,15 @@
         <li><%= link_to "Home", root_path %></li>
         <% if user_signed_in? %>
             <li><%= link_to chores_path do %>
-                <%= fa_icon "list" %>
+                <%= fa_icon "list", title: "View chores" %>
                 <% end %>
             </li>
             <li><%= link_to new_chore_path do %>
-                    <%= fa_icon "plus" %>
+                    <%= fa_icon "plus", title: "Add chore" %>
                 <% end %>
             </li>
             <li><%= link_to edit_profile_path(current_user) do %>
-                    <%= fa_icon "user" %>
+                    <%= fa_icon "user", title: "View profile" %>
                 <% end %>
             </li>
             <li><%= link_to "Sign Out", sign_out_path %></li>

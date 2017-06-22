@@ -23,12 +23,12 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    transition: .3s;
+a:hover, .btn-primary:hover {
+    transition-duration: .6s;
 }
 
 i:hover {
-    transition: 1s;
+    transition-duration: .8s;
 }
 
 body {
@@ -152,7 +152,6 @@ input#chore_duration_end_date {
 
 .btn-primary:hover {
     background: #6FD7E5;
-    transition: .5s;
 }
 
 .flash.success {
