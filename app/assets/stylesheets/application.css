@@ -161,7 +161,7 @@ h2 {
     border-right: 1px solid gray;
     float: left;
     display: inline-block;
-    margin-left: 4%;
+    margin-left: 2%;
     width: 20%;
 }
 
@@ -173,12 +173,17 @@ h2 {
     text-align: left;
 }
 
+table {
+    margin: 0 auto;
+}
+
 .col-med {
     float: left;
-    margin-right: 5%;
-    width: 70%;
+    margin-left: 3%;
+    margin-right: 3%;
+    width: 71.5%;
 }
 
 .no-chores-text {
-    display: inline; 
+    margin: 0 auto; 
 }
