@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
         <%= render 'layouts/sidebar' %>
       <% end %>
-      
+
 <% if @chores.empty? %>
     <div class="no-chores-text col-med">
         You do not currently have any chores.
@@ -9,18 +9,10 @@
 <% else %>
 
 
-    <table class="list-field">
-        <tr>
-            <th></th>
-            <th>Chore</th>
-            <th>Category</th>
-            <th><%= fa_icon "user" %></i></th>
-            <th>From</th>
-            <th>Until</th>
-            <th>Frequency</th>
-        </tr>
+    <%= render 'categories/category' %>
     <%= render @chores %>
     </table>
+</div>
 
     <!--<%# if !@overdue_chores.empty? %>
         Overdue Chores:
