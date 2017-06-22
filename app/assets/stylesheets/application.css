@@ -177,6 +177,10 @@ table {
     margin: 0 auto;
 }
 
+th, td {
+    padding: 15px 30px;
+}
+
 .col-med {
     float: left;
     margin-left: 3%;
@@ -186,4 +190,11 @@ table {
 
 .no-chores-text {
     margin: 0 auto; 
+}
+
+.category-color-circle {
+    background: gold;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
 }

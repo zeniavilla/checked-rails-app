@@ -1,13 +1,12 @@
 
     
     <tr>
-        <td></td>
+        <td><div class="category-color-circle"></div></td>
         <td><%= chore.title %></td>
         <td><%= chore.category.title %></td>
         <td><%= chore.user.name %></td>
-        <td><%= chore.created_at.strftime("%A, %d %b %Y") %></td>
         <td><% if chore.duration_end_date %>
-                <%= chore.duration_end_date.strftime("%A, %d %b %Y") %>
+                <%= chore.duration_end_date.strftime("%a, %d %b %Y") %>
             <% else %>
                 Forever
             <% end %></td>
