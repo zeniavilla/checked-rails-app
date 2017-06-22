@@ -1,16 +1,21 @@
 <nav>
     <ul>
+        <li><%= link_to "Home", root_path %></li>
         <% if user_signed_in? %>
-            <li><%= link_to "Home", chores_path %></li>
+            <li><%= link_to chores_path do %>
+                <%= fa_icon "list" %>
+                <% end %>
+            </li>
             <li><%= link_to new_chore_path do %>
                     <%= fa_icon "plus" %>
-                <% end %></li>
+                <% end %>
+            </li>
             <li><%= link_to edit_profile_path(current_user) do %>
                     <%= fa_icon "user" %>
-                <% end %></li>
+                <% end %>
+            </li>
             <li><%= link_to "Sign Out", sign_out_path %></li>
         <% else %>
-            <li><%= link_to "Home", root_path %></li>
             <li><%= link_to "Sign In", sign_in_path %></li>
             <li><%= link_to "Sign Up", users_sign_up_path %></li>
         <% end %>
