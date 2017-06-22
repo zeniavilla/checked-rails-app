@@ -16,6 +16,9 @@
             Every <%= pluralize(chore.frequency_amount, chore.frequency_interval.gsub('s', '')) %>
             <% end %>
         </td>
+        <td>
+            <%= link_to "<i class='fa fa-check-circle' aria-hidden='true'></i>".html_safe, checked_path(chore.category.id, chore.id), class: "check-button", method: :post %>
+        </td>
         <td><% if current_user.overdue_chores.find_by(id: chore.id) %>
             <%= fa_icon "exclamation-circle" %>
             <% end %>

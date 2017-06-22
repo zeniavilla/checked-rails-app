@@ -1,9 +1,9 @@
 class ChoresController < ApplicationController
-    before_action :set_chore, only: [:show, :edit, :update]
+    before_action :set_chore, only: [:show, :edit, :update, :checked]
     before_action :set_category, only: [:show, :edit, :update]
     
     def index
-        @chores = current_user.chores.all
+        @chores = current_user.chores.all.where("active IS ?", true)
     end
     
     def new
@@ -39,6 +39,12 @@ class ChoresController < ApplicationController
     end
     
     def destroy
+    end
+
+    def checked
+        @chore.update(active: false)
+        flash[:success] = "You've just completed a chore!"
+        redirect_to chores_path
     end
     
     private

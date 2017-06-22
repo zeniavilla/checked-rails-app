@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/chores', to: 'chores#index', as: 'chores'
   get '/chores/new', to: 'chores#new', as: 'new_chore'
   post '/chores', to: 'chores#create'
+  post '/categories/:id/chores/:id/checked', to: 'chores#checked', as: 'checked'
 
   resources :teams, only: :show
 
