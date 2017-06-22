@@ -16,7 +16,7 @@ class Chore < ApplicationRecord
   end
 
   def self.overdue
-    where('duration_end_date < ?', DateTime.now)
+    @overdue ||= self.where('duration_end_date < ?', DateTime.now)
   end
 
   private
