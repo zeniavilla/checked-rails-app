@@ -4,8 +4,15 @@
 
 <div class="col-med">
 <h2><%= @category.title %></h2>
+    <% if @chores.empty? %>
+        <div>
+            You currently have no chores.
+        </div><br><br>
+            <%= link_to "Add Chore", new_chore_path, class: "btn-primary" %>
+    <% else %>
 
-<%= render 'category_header' %>
+        <%= render 'category_header' %>
         <%= render @chores %>
-    </table>
+        </table>
+    <% end %>
 </div>

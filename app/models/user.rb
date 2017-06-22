@@ -8,6 +8,9 @@ class User < ApplicationRecord
   has_secure_password
   validates_confirmation_of :password
 
+  validates :email, presence: true, uniqueness: true
+  validates :name, presence: true
+
   def team_attributes=(team_attributes)
     if !team_attributes.values.first.blank?
       team = Team.find_or_create_by(team_attributes)

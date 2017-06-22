@@ -23,6 +23,14 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    transition: .3s;
+}
+
+i:hover {
+    transition: 1s;
+}
+
 body {
     background: #f4f4f4;
     font: 16px/100% Lato, sans-serif;
@@ -79,7 +87,7 @@ nav ul li a {
 nav ul li a:hover {
     border-bottom: 5px solid #72f5ff;
     color: #72f5ff;
-    padding-bottom: 10px;
+    padding-bottom: 11px;
 }
 
 nav ul li:first-child {
@@ -144,6 +152,7 @@ input#chore_duration_end_date {
 
 .btn-primary:hover {
     background: #6FD7E5;
+    transition: .5s;
 }
 
 .flash.success {
@@ -204,7 +213,6 @@ input#chore_duration_end_date {
 
 .sidebar li a:hover {
     border-bottom: 3px solid #0bd0de;
-    transition: .3s;
 }
 
 li.blue-names {

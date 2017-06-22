@@ -7,8 +7,8 @@
         <% end %>
         <li class="blue-names">
             Hello, <%= current_user.name %>
-        </li>
-        <li>Add Chore</li>
+        </li><br>
+        <li><%= link_to "Add Chore", new_chore_path %></li>
         <li>Categories:</li>
 
             <%= render partial: 'categories/category', collection: current_owner.categories.uniq %>
