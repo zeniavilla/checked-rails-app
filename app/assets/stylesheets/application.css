@@ -34,8 +34,14 @@ main {
     border: 1px solid #ececec;
     margin: 0 auto;
     max-width: 1300px;
-    padding: 60px;
+    padding: 50px 0;
     text-align: center;
+}
+
+main:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 i.fa {
@@ -149,4 +155,30 @@ h2 {
   position: relative;
   text-transform: uppercase;
   top: 25px; /* 25% of parent */
+}
+
+.sidebar {
+    border-right: 1px solid gray;
+    float: left;
+    display: inline-block;
+    margin-left: 4%;
+    width: 20%;
+}
+
+.sidebar ul {
+    margin: 0;
+}
+
+.sidebar li {
+    text-align: left;
+}
+
+.col-med {
+    float: left;
+    margin-right: 5%;
+    width: 70%;
+}
+
+.no-chores-text {
+    display: inline; 
 }
