@@ -6,7 +6,8 @@
     <% if @chores.empty? %>
         <div>
             You currently have no chores.
-        </div>
+        </div><br><br>
+        <%= link_to "Add Chore", new_chore_path, class: "btn-primary" %>
     <% else %>
 
         <h2><%= current_user.name %>'s Chores</h2>
