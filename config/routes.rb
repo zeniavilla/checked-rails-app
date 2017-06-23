@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/sign_out', to: 'sessions#destroy'
   get '/sign_in', to: 'sessions#new'
   post 'sign_in', to: 'sessions#create'
+  get '/auth/facebook/callback' => 'sessions#create'
 
   resources :categories, except: [:index] do
     resources :chores, except: [:new, :create]

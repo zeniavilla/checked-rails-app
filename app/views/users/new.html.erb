@@ -1,3 +1,6 @@
 <h2>Sign up</h2>
 
 <%= render partial: 'form', locals: {user: @user, submit_text: "Sign Up"} %>
+
+<!--<div class="fb-login-button" data-width="200px" data-max-rows="1" data-size="medium" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>-->
+<br><%= link_to("login with facebook!", "/auth/facebook") %>
