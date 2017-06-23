@@ -301,3 +301,22 @@ h2 i.fa.fa-pencil {
     opacity: .7;
     transition-duration: .5s;
 }
+
+ul.team-users {
+    list-style: none;
+    padding: 0;
+}
+
+ul.team-users li {
+    margin-bottom: 2%;
+}
+
+ul.team-users li:last-child {
+    margin-bottom: 5%;
+}
+
+.sub-title {
+    border-bottom: 2px solid #09c290;
+    font-size: 1.6em;
+    font-weight: 400;
+}

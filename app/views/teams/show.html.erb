@@ -1,12 +1,14 @@
-<table class="list-field">
-        <tr>
-            <th></th>
-            <th>Chore</th>
-            <th>Category</th>
-            <th><%= fa_icon "user" %></i></th>
-            <th>From</th>
-            <th>Until</th>
-            <th>Frequency</th>
-        </tr>
-    <%= render partial: 'chores/chore', collection: @team.chores %>
-    </table>
+<% if user_signed_in? %>
+    <%= render 'layouts/sidebar' %>
+<% end %>
+
+<div class="col-med">
+    <h2>Team <%= current_team.name %></h2>
+
+    <span class="sub-title">Total Chores: <%= num_chores(current_team) %></span>
+
+    <ul class="team-users">
+    <%= render partial: 'users/user', collection: @users %>
+    </ul>
+
+</div>
