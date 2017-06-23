@@ -66,6 +66,11 @@ nav {
     overflow: hidden;
 }
 
+nav img {
+    display: block;
+    width: 220px;
+}
+
 nav ul {
     display: flex;
     margin: 0;
@@ -75,6 +80,7 @@ nav ul {
 nav ul li {
     display: inline-block;
     list-style-type: none;
+    margin: auto 0;
 }
 
 nav ul li a {

@@ -1,6 +1,10 @@
 <nav>
     <ul>
-        <li><%= link_to "Home", root_path %></li>
+        <li>
+            <%= link_to root_path, class: 'nav-logo' do %>
+                <%= image_tag "checked-logo.png" %>
+            <% end %>
+        </li>
         <% if user_signed_in? %>
             <li><%= link_to chores_path do %>
                 <%= fa_icon "list", title: "View chores" %>
