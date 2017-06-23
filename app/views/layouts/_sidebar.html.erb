@@ -2,11 +2,11 @@
     <ul>
         <% if current_team %>
             <li class="blue-names">
-                <%= current_owner.class.name + " " + current_team.name %>
+                <%= link_to current_owner.class.name + " " + current_team.name, team_path(current_team.id) %>
             </li>
         <% end %>
         <li class="blue-names">
-            Hello, <%= current_user.name %>
+            <%= link_to "Hello, "+ current_user.name, edit_profile_path(current_user.id) %>
         </li><br>
         <li><%= link_to "Add Chore", new_chore_path %></li>
         <li>Categories:</li>

@@ -68,7 +68,8 @@ nav {
 
 nav img {
     display: block;
-    width: 220px;
+    height: 2em;
+    padding: .5em;
 }
 
 nav ul {
@@ -220,7 +221,7 @@ input#chore_duration_end_date {
     border-bottom: 3px solid #0bd0de;
 }
 
-li.blue-names {
+li.blue-names a {
     color: #0bd0de;
     font-size: 18px;
 }
@@ -282,4 +283,13 @@ h2 i.fa.fa-pencil {
 
 .btn-green i:hover {
     background: #09c290;
+}
+
+.fb-login-button {
+    margin-top: 20px;
+}
+
+.fb-login-button:hover {
+    opacity: .7;
+    transition-duration: .5s;
 }
