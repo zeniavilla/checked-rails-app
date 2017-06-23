@@ -148,19 +148,6 @@ input#chore_duration_end_date {
     color: #757575;
 }
 
-.btn-primary {
-    background: #0bd0de;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    font-size: 1.2em;
-    padding: 15px;
-}
-
-.btn-primary:hover {
-    background: #6FD7E5;
-}
-
 .flash.success {
     background: #e6ffe6;
     color: #228B22;
@@ -262,6 +249,21 @@ td:nth-child(8), td:nth-child(9), td:nth-child(10) {
     color: #09c290;
 }
 
+.btn-primary {
+    background: #0bd0de;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    padding: 15px;
+    width: 18%;
+}
+
+.btn-primary:hover {
+    background: #6FD7E5;
+}
+
 .btn-red i, .btn-green i {
     background: #c7c9cc;
     border-radius: 0.8em; 
@@ -285,11 +287,17 @@ h2 i.fa.fa-pencil {
     background: #09c290;
 }
 
-.fb-login-button {
-    margin-top: 20px;
+.btn-facebook {
+    background: #4267b2;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 15px;
+    width: 18%
 }
 
-.fb-login-button:hover {
+.btn-facebook:hover {
     opacity: .7;
     transition-duration: .5s;
 }
