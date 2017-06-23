@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     end
 
     def create
-        if auth['uid']
+        if auth
             @user = User.find_or_create_by_omniauth(auth)
             success_sign_up
         else

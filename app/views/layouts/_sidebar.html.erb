@@ -8,7 +8,7 @@
         <li class="blue-names">
             <%= link_to "Hello, "+ current_user.name, edit_profile_path(current_user.id) %>
         </li><br>
-        <li><%= link_to "Add Chore", new_chore_path %></li>
+        <li><%= link_to "Add Chore", new_category_chore_path(Category.find_or_create_by(title: "Uncategorized").id) %></li>
         <li>Categories:</li>
 
             <%= render partial: 'categories/category', collection: current_owner.categories.uniq %>

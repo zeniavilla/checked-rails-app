@@ -13,12 +13,11 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback' => 'sessions#create'
 
   resources :categories, except: [:index] do
-    resources :chores, except: [:new, :create]
+    resources :chores, except: [:index]
   end
 
   get '/chores', to: 'chores#index', as: 'chores'
-  get '/chores/new', to: 'chores#new', as: 'new_chore'
-  post '/chores', to: 'chores#create'
+  
   post '/categories/:id/chores/:id/checked', to: 'chores#checked', as: 'checked'
 
   resources :teams, only: :show
