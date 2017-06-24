@@ -4,6 +4,6 @@ class Team < ApplicationRecord
     has_many :categories, through: :users
 
     def my_active_chores
-        Chore.active_chores
+        self.chores.where("active IS ?", true)
     end
 end
