@@ -1,6 +1,6 @@
 class ChoresController < ApplicationController
     before_action :set_chore, only: [:show, :edit, :update, :checked, :destroy]
-    before_action :set_category, only: [:show, :edit, :update]
+    before_action :set_category, only: [:show, :new, :create, :edit, :update]
     
     def index
         @chores = current_user.my_active_chores
@@ -10,7 +10,7 @@ class ChoresController < ApplicationController
         @chore = Chore.new
     end
     
-    def create        
+    def create
         @chore = current_user.chores.build(chore_params)
         if @chore.save
             flash[:success] = "Successfully saved chore."
