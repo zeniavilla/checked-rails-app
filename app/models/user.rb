@@ -20,10 +20,6 @@ class User < ApplicationRecord
     end
   end
 
-  def overdue_chores
-    Chore.overdue.where('user_id IS ?', self.id)
-  end
-
   def my_active_chores
     Chore.active_chores.where('user_id IS ?', self.id)
   end

@@ -8,7 +8,7 @@
     <% if current_team %>
         <div class="field">
             <%= f.label :user_id, "<i class='fa fa-envelope' aria-hidden='true'></i>".html_safe %>
-            <%= f.collection_select :user_id, current_team.users, :id, :name, prompt: true, selected: current_user.id %>
+            <%= f.collection_select :user_id, current_team.users, :id, :name, prompt: true, selected: chore.user_id || current_user.id %>
         </div>
     <% end %>
 

@@ -5,6 +5,6 @@ module ApplicationHelper
 
 
     def num_chores(model_object)
-        model_object.chores.count
+        model_object.chores.where(active: true).count
     end
 end

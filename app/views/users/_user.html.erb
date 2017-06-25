@@ -1,1 +1,1 @@
-<li><%= user.name %> - <%= num_chores(user) %> chores</li>
+<li><%= user.name %> | <%= pluralize(num_chores(user), 'chore') %></li>

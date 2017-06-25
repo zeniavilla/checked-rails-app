@@ -11,7 +11,8 @@ class ChoresController < ApplicationController
     end
     
     def create
-        @chore = current_user.chores.build(chore_params)
+        user = User.find(params[:chore][:user_id])
+        @chore = user.chores.build(chore_params)
         if @chore.save
             flash[:success] = "Successfully saved chore."
             redirect_to category_chore_path(@chore.category_id, @chore)
@@ -21,11 +22,11 @@ class ChoresController < ApplicationController
     end
 
     def show
-        current_user_only
+        current_team_only
     end
 
     def edit
-        current_user_only
+        current_team_only
     end
 
     def update
@@ -50,11 +51,18 @@ class ChoresController < ApplicationController
         redirect_to chores_path
     end
 
-    def current_user_only
-        if @chore.user != current_user
-            flash[:error] = "You can only view/edit your own chores."
-            redirect_to chores_path
-        end
+    def current_team_only
+        # if current_team
+        #     if @chore.user.team != current_owner
+        #         flash[:error] = "You can only view/edit your own team chores."
+        #         redirect_to chores_path
+        #     end
+        # else
+        #     if @chore.user != current_owner
+        #         flash[:error] = "You can only view/edit your own chores."
+        #         redirect_to chores_path
+        #     end
+        # end
     end
     
     private

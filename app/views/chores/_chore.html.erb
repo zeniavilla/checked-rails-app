@@ -15,7 +15,7 @@
         <td><% if chore.frequency_amount && chore.frequency_interval %>
             Every <%= pluralize(chore.frequency_amount, chore.frequency_interval.gsub('s', '')) %>
             <% else %>
-            Never
+            Once
             <% end %>
         </td>
         <td>
@@ -27,7 +27,7 @@
         <td>
             <%= link_to "<i class='fa fa-trash' aria-hidden='true'></i>".html_safe, category_chore_path(chore.category.id, chore.id), method: "delete", class:"btn-red", title: "Delete chore" %>
         </td>
-        <td><% if current_user.overdue_chores.find_by(id: chore.id) %>
+        <td><% if Chore.overdue.find_by(id: chore.id) %>
             <%= fa_icon "exclamation-circle" %>
             <% end %>
         </td>
