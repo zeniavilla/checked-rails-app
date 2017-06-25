@@ -8,7 +8,10 @@
         <li class="blue-names">
             <%= link_to "Hello, "+ current_user.name, edit_profile_path(current_user.id) %>
         </li><br>
-        <li><%= link_to "Add Chore", new_category_chore_path(Category.find_or_create_by(title: "Uncategorized").id) %></li>
+        <li><%= link_to new_category_chore_path(Category.find_or_create_by(title: "Uncategorized").id) do %>
+            <%= fa_icon "plus", title: "Add chore" %>
+        <% end %>
+        </li>
         <li><%= link_to "My Chores", chores_path %></li>
         <li>Categories:</li>
             <ul>

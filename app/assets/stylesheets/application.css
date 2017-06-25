@@ -208,6 +208,11 @@ input#chore_duration_end_date {
     border-bottom: 3px solid #0bd0de;
 }
 
+.sidebar i.fa.fa-plus {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
 li.blue-names a {
     color: #0bd0de;
     font-size: 18px;
