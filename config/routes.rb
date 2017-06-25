@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   post 'sign_in', to: 'sessions#create'
   get '/auth/facebook/callback' => 'sessions#create'
 
-  resources :categories, except: [:index] do
+  resources :categories do
     resources :chores, except: [:index]
   end
 

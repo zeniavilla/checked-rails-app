@@ -1,5 +1,9 @@
 class CategoriesController < ApplicationController
     before_action :set_category, only: [:show, :edit, :update, :destroy]
+    
+    def index
+        @chores = current_owner.chores
+    end
 
     def show
         @chores = current_owner.my_active_chores.where("category_id IS ?", params[:id])
