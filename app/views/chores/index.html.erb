@@ -1,21 +1,14 @@
-<% if user_signed_in? %>
-    <%= render 'layouts/sidebar' %>
-<% end %>
+<%= render 'layouts/sidebar' %>
 
 <div class="col-med">
     <% if @chores.empty? %>
-        <div>
-            You currently have no chores.
-        </div><br><br>
-        <%= link_to "Add Chore", new_category_chore_path(Category.find_or_create_by(title: "Uncategorized").id), class: "btn-primary" %>
+        <%= render 'shared/add_chore_button' %>
     <% else %>
 
         <h2><%= current_user.name %>'s Chores</h2>
         <%= render 'categories/category_header' %>
         <%= render @chores %>
         </table>
-    </div>
-
 
     <% end %>
 </div>
