@@ -6,6 +6,6 @@ module ActiveChores
     end
     
     def my_active_chores
-        self.chores.where("active IS ?", true)
+        @active_chores ||= self.chores.where("active IS ?", true)
     end
 end
