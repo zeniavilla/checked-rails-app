@@ -3,3 +3,5 @@
 <%= render partial: 'form', locals: {user: @user, submit_text: "Sign Up"} %>
 
 <br><%= link_to "Continue with Facebook", "/auth/facebook", class: "btn-facebook" %>
+
+<br><br><br><%= link_to "Sign in", sign_in_path, class: "user-link" %>
