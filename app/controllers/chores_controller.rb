@@ -31,6 +31,7 @@ class ChoresController < ApplicationController
 
     def update
         @chore.assign_attributes(chore_params)
+        @chore.user = User.find(params[:chore][:user_id])
         if @chore.save
             flash[:success] = "Successfully updated chore."
             redirect_to category_chore_path(@chore.category_id, @chore)
