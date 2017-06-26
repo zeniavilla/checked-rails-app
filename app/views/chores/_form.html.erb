@@ -15,7 +15,7 @@
     <%= f.fields_for :category, chore.build_category do |category| %>
         <div class="field">
             <%= category.label :title, "<i class='fa fa-tag' aria-hidden='true'></i>".html_safe %>
-            <%= category.text_field :title, value: c, placeholder: "Category", class: "text-field" %>
+            <%= category.text_field :title, value: category_value, placeholder: "Category", class: "text-field" %>
         </div>
     <% end %>
 

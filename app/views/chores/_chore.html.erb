@@ -1,34 +1,32 @@
+<tr>
+    <td><%= link_to "<div class=\"category-color-circle\"></div>".html_safe,category_chore_path(chore.category.id, chore.id) %></td>
+    <td><%= chore.title %></td>
+    <td><%= chore.category.title %></td>
+    <td><%= chore.user.name %></td>
+    <td><% if chore.duration_end_date %>
+            <%= chore.duration_end_date.strftime("%a, %d %b %Y") %>
+        <% else %>
+            Forever
+        <% end %>
+    </td>
 
-    
-    <tr>
-        <td><%= link_to "<div class=\"category-color-circle\"></div>".html_safe,category_chore_path(chore.category.id, chore.id) %></td>
-        <td><%= chore.title %></td>
-        <td><%= chore.category.title %></td>
-        <td><%= chore.user.name %></td>
-        <td><% if chore.duration_end_date %>
-                <%= chore.duration_end_date.strftime("%a, %d %b %Y") %>
-            <% else %>
-                Forever
-            <% end %>
-        </td>
-
-        <td><% if chore.frequency_amount && chore.frequency_interval %>
-            Every <%= pluralize(chore.frequency_amount, chore.frequency_interval.gsub('s', '')) %>
-            <% else %>
-            Once
-            <% end %>
-        </td>
-        <td>
-            <%= link_to "<i class='fa fa-check-circle' aria-hidden='true'></i>".html_safe, checked_path(chore.category.id, chore.id), class: "check-button", title: "Mark as complete", method: :post %>
-        </td>
-        <td>
-            <%= link_to "<i class='fa fa-pencil' aria-hidden='true'></i>".html_safe, edit_category_chore_path(chore.category.id, chore.id), class: "btn-green", title: "Edit chore" %>
-        </td>
-        <td>
-            <%= link_to "<i class='fa fa-trash' aria-hidden='true'></i>".html_safe, category_chore_path(chore.category.id, chore.id), method: "delete", class:"btn-red", title: "Delete chore" %>
-        </td>
-        <td><% if Chore.overdue.find_by(id: chore.id) %>
-            <%= fa_icon "exclamation-circle" %>
-            <% end %>
-        </td>
-    </tr>
+    <td><% if chore.frequency_amount && chore.frequency_interval %>
+        Every <%= pluralize(chore.frequency_amount, chore.frequency_interval.gsub('s', '')) %>
+        <% else %>
+        Once
+        <% end %>
+    </td>
+    <td>
+        <%= link_to "<i class='fa fa-check-circle' aria-hidden='true'></i>".html_safe, checked_path(chore.category.id, chore.id), class: "check-button", title: "Mark as complete", method: :post %>
+    </td>
+    <td>
+        <%= link_to "<i class='fa fa-pencil' aria-hidden='true'></i>".html_safe, edit_category_chore_path(chore.category.id, chore.id), class: "btn-green", title: "Edit chore" %>
+    </td>
+    <td>
+        <%= link_to "<i class='fa fa-trash' aria-hidden='true'></i>".html_safe, category_chore_path(chore.category.id, chore.id), method: "delete", class:"btn-red", title: "Delete chore" %>
+    </td>
+    <td><% if Chore.overdue.find_by(id: chore.id) %>
+        <%= fa_icon "exclamation-circle" %>
+        <% end %>
+    </td>
+</tr>
