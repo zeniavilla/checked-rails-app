@@ -1,6 +1,4 @@
-<% if user_signed_in? %>
-    <%= render 'layouts/sidebar' %>
-<% end %>
+<%= render 'layouts/sidebar' %>
 
 <div class="col-med">
     <% if @chores.empty? %>
@@ -11,8 +9,6 @@
         <%= render 'categories/category_header' %>
         <%= render @chores %>
         </table>
-    </div>
-
 
     <% end %>
 </div>
