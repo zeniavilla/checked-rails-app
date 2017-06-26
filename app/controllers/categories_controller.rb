@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
     end
 
     def show
-        @chores = current_owner.my_active_chores.where("category_id IS ?", params[:id])
+        @chores = current_owner.my_active_chores.where("category_id = ?", params[:id])
         
     end
 

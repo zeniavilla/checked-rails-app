@@ -1,5 +1,5 @@
 class Chore < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, required: false
   belongs_to :category, required: false
 
   after_initialize :set_defaults
@@ -24,7 +24,6 @@ class Chore < ApplicationRecord
 
   def set_defaults
     self.category ||= Category.find_or_create_by(title: 'Uncategorized')
-    self.active = true
   end
 
 end
