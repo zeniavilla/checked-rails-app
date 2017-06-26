@@ -1,8 +1,8 @@
 class CategoriesController < ApplicationController
-    before_action :set_category, only: [:show, :edit, :update, :destroy]
+    before_action :set_category, only: :show
     
     def index
-        @chores = current_owner.chores
+        @chores = current_owner.my_active_chores
     end
 
     def show
@@ -22,15 +22,6 @@ class CategoriesController < ApplicationController
         else
             render :new
         end
-    end
-
-    def edit
-    end
-
-    def update
-    end
-
-    def destroy
     end
 
     private

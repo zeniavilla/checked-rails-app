@@ -22,11 +22,11 @@ class ChoresController < ApplicationController
     end
 
     def show
-        current_team_only
+        current_owner_only
     end
 
     def edit
-        current_team_only
+        current_owner_only
     end
 
     def update
@@ -51,17 +51,10 @@ class ChoresController < ApplicationController
         redirect_to chores_path
     end
 
-    def current_team_only
-        if current_team
-            if @chore.user.team != current_owner
-                flash[:error] = "You can only view/edit your own team chores."
-                redirect_to chores_path
-            end
-        else
-            if @chore.user != current_owner
-                flash[:error] = "You can only view/edit your own chores."
-                redirect_to chores_path
-            end
+    def current_owner_only
+        if !current_owner.chores.find_by(id: @chore.id)
+            flash[:error] = "You can only view your own chores."
+            redirect_to chores_path
         end
     end
     
