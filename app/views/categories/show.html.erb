@@ -2,7 +2,7 @@
 
 <div class="col-med">
 <h2><%= @category.title %></h2>
-    <% if @chores.empty? %>
+    <% if !@chores || @chores.empty? %>
         <%= render 'shared/add_chore_button' %>
     <% else %>
 

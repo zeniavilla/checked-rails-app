@@ -2,10 +2,14 @@ module ActiveChores
     extend ActiveSupport::Concern
     
     included do
-        belongs_to :user
+        belongs_to :user, required: false
     end
     
     def my_active_chores
-        @active_chores ||= self.chores.where("active IS ?", true)
+        if self.chores.empty?
+            return nil
+        else
+            self.chores.where("active IS ?", true)
+        end
     end
 end

@@ -1,11 +1,11 @@
 <%= render 'layouts/sidebar' %>
 
 <div class="col-med">
-    <% if @chores.empty? %>
+    <h2><%= current_user.name %>'s Chores</h2>
+    <% if !@chores || @chores.empty? %>
         <%= render 'shared/add_chore_button' %>
     <% else %>
 
-        <h2><%= current_user.name %>'s Chores</h2>
         <%= render 'categories/category_header' %>
         <%= render @chores %>
         </table>
