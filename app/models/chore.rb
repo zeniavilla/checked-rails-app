@@ -1,10 +1,10 @@
 class Chore < ApplicationRecord
-  belongs_to :user, required: false
+  belongs_to :user
   belongs_to :category, required: false
 
   after_initialize :set_defaults
 
-  validates :title, presence: { message: "Chore name needed." }
+  validates :title, presence: { message: "Please enter a chore name." }
   validates :frequency_interval, presence: { message: "Please select a repeat interval or delete the repeat amount." }, if: :frequency_amount?
   validates :frequency_amount, presence: { message: "Please enter a repeat amount or clear the repeat interval." }, if: :frequency_interval?
 

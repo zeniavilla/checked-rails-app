@@ -11,6 +11,8 @@ class User < ApplicationRecord
   validates :email, presence: { message: "Please enter your email address." }
   validates :email, uniqueness: { message: "That email address is already registered."}
   validates :name, presence: { message: "Please enter your name." }
+  
+  include ActiveChores
 
   def team_attributes=(team_attributes)
     if !team_attributes.values.first.blank?
@@ -18,10 +20,6 @@ class User < ApplicationRecord
       self.team=(team)
       self.save
     end
-  end
-
-  def my_active_chores
-    Chore.active_chores.where('user_id IS ?', self.id)
   end
 
   def self.find_or_create_by_omniauth(auth_hash)
