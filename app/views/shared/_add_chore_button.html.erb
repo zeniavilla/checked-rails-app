@@ -1,0 +1,4 @@
+<div>
+    You currently have no chores.
+</div><br><br>
+<%= link_to "Add Chore", new_category_chore_path(Category.find_or_create_by(title: "Uncategorized").id), class: "btn-primary" %>

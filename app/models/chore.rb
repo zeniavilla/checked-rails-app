@@ -20,10 +20,6 @@ class Chore < ApplicationRecord
     @overdue ||= self.where('duration_end_date < ?', DateTime.now)
   end
 
-  def self.active_chores
-    @active_chores ||= self.where("active IS ?", true)
-  end
-
   private
 
   def set_defaults
