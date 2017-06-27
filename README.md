@@ -1,24 +1,25 @@
-# README
+# Checked App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This Rails app allows a user to manage chores and other tasks as part of a team or solo.
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+Clone this repo.
+    $ bundle install
+    $ rake db:migrate
 
-* System dependencies
+## Usage
 
-* Configuration
+Type the below line into your terminal and then visit localhost:3000 in your web browser.
 
-* Database creation
+    $ rails s
 
-* Database initialization
+## Contributing
 
-* How to run the test suite
+Bug reports and pull requests are welcome on GitHub at https://github.com/zeniavilla/top_travel_destinations. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## License
 
-* ...
+The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
