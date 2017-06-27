@@ -4,7 +4,7 @@ This Rails app allows a user to manage chores and other tasks as part of a team 
 
 ## Installation
 
-Clone this repo.
+    $ Clone this repo.
     $ bundle install
     $ rake db:migrate
 
