@@ -17,7 +17,7 @@ Type the below line into your terminal and then visit localhost:3000 in your web
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/zeniavilla/top_travel_destinations. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/zeniavilla/checked-rails-app. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
