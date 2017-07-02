@@ -15,13 +15,9 @@ group :production do
   gem 'pg'
 end
 
-<<<<<<< HEAD
-gem 'sqlite3'
-=======
 group :development, :test do
   gem 'sqlite3'
 end
->>>>>>> 7d3de17c89771c2cb898fd1dd4cad934ea029c45
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
