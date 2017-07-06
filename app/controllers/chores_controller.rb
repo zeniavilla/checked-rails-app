@@ -11,7 +11,7 @@ class ChoresController < ApplicationController
     end
     
     def create
-        user = User.find(params[:chore][:user_id])
+        user = User.find_by(id: params[:chore][:user_id]) || current_user
         @chore = user.chores.build(chore_params)
         if @chore.save
             flash[:success] = "Successfully saved chore."
