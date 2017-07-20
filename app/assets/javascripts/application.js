@@ -14,6 +14,7 @@
 //= require turbolinks
 //= require jquery
 //= require jquery_ujs
+//= require moment
 //= require handlebars.runtime
 //= require handlebars.js
 //= require_tree ./templates
