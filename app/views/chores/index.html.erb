@@ -7,8 +7,42 @@
     <% else %>
 
         <%= render 'categories/category_header' %>
+        <tr>
+            <%= form_for [@category, @chore] do |f| %>
+                <td></td>
+
+                <td><%= f.text_field :title, placeholder: "Chore", class: "text-field-table" %></td>
+
+                <%= f.fields_for :category, @chore.build_category do |category| %>
+                    <td><%= category.text_field :title, value: nil, placeholder: "Category", class: "text-field-table" %></td>
+                <% end %>
+
+                <% if current_team %>
+                    <td><%= f.collection_select :user_id, current_team.users, :id, :name, {prompt: true, selected: @chore.user_id || current_user.id}, {class: 'form-select'} %></td>
+                <% end %>
+
+                <td><%= f.date_field :duration_end_date, class: "text-field-table" %></td>
+
+                <td><%= f.number_field :frequency_amount, placeholder: "Every 2", class: "text-field-table" %></td>
+                <td><%= f.select :frequency_interval, [["select", ""],"days", "weeks", "months", "years"], {}, {class: 'form-select'} %></td>
+
+                <td><%= f.submit 'Add', class: "btn-green" %></td>
+            <% end %>
+        </tr>
         <%= render @chores %>
+        <tr class="js-chore"></tr>
         </table>
 
     <% end %>
 </div>
+
+<script id="chore-template" type="text/x-handlebars-template">
+    <tr>
+        <td></td>
+        <td>{{title}}</td>
+        <td>{{categoryTitle}}</td>
+        <td>{{userName}}</td>
+        <td>{{durationEndDate}}</td>
+        <td>Every {{frequencyAmount}} {{frequencyInterval}}</td>
+    </tr>
+</script>
