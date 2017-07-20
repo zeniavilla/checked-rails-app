@@ -49,8 +49,20 @@
         <td>{{title}}</td>
         <td>{{category.title}}</td>
         <td>{{user.name}}</td>
-        <td>{{formatTime durationEndDate "dddd, DD MMMM YYYY"}}</td>
-        <td>Every {{frequencyAmount}} {{frequencyInterval}}</td>
+
+        {{#if durationEndDate}}
+            <td>{{formatTime durationEndDate "dddd, DD MMMM YYYY"}}</td>
+        {{else}}
+            <td>Forever</td>
+        {{/if}}
+        
+        {{#if frequencyAmount}}
+            <td>Every {{frequencyAmount}} {{frequencyInterval}}</td>
+        {{else}}
+            <td>Once</td>
+        {{/if}}
+
+        <!-- actions -->
         <td>
             <a class="check-button" title="Mark as complete" rel="nofollow" data-method="post" href="/categories/{{category.id}}/chores/{{id}}/checked"><i class="fa fa-check-circle" aria-hidden="true"></i></a>
         </td>
