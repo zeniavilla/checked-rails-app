@@ -15,13 +15,13 @@ class CategoriesController < ApplicationController
     end
 
     def create
-        @category = Category.new(category_params)
-        if @category.save
-            flash[:success] = "Category successfully created"
-            redirect_to category_path(@category.id)
-        else
-            render :new
-        end
+        @category = current_user.categories.create(category_params)
+        # if @category.save
+        #     flash[:success] = "Category successfully created"
+            render json: @category, status: 201
+        # else
+        #     render :new
+        # end
     end
 
     private
@@ -31,6 +31,6 @@ class CategoriesController < ApplicationController
     end
 
     def category_params
-        params.require(:category).permit(:title)
+        params.permit(:title)
     end
 end
