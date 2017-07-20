@@ -70,15 +70,24 @@ nav img {
 
 /* forms */
 
-.text-field, select {
+.text-field, select, .text-field-sidebar {
     border-left: none;
     border-right: none;
     border-top: none;
     border-bottom: 1px solid #c7c9cc;
-    font: 300 1.3em/100% Lato, sans-serif;
     height: 40px;
     padding-left: 20px;
+}
+
+.text-field, select {
+    font: 300 1.3em/100% Lato, sans-serif;
     width: 300px;
+}
+
+.text-field-sidebar {
+    float: left;
+    font: 300 1em/100% Lato, sans-serif;
+    width: 75%; 
 }
 
 select {
@@ -246,34 +255,29 @@ nav ul li a:hover {
     color: #09c290;
 }
 
-.btn-primary {
+.btn-primary, .btn-secondary {
     background: #0bd0de;
     border: none;
     color: #fff;
     cursor: pointer;
-    font-size: 1.2em;
     margin-bottom: 15px;
-    padding: 15px;
-    width: 18%;
 }
 
-.btn-primary:hover {
+.btn-primary {
+    font-size: 1.2em;
+    padding: 15px;
+    width: 18%; 
+}
+
+.btn-primary:hover, .btn-secondary:hover {
     background: #6FD7E5;
 }
 
 .btn-secondary {
-    background: #0bd0de;
-    border: none;
-    color: #fff;
-    cursor: pointer;
+    float: left;
     font-size: 1em;
-    margin-bottom: 15px;
     padding: 10px 5px;
-    width: 80%;
-}
-
-.btn-primary:hover {
-    background: #6FD7E5;
+    width: 86%;
 }
 
 .btn-red i, .btn-green i {

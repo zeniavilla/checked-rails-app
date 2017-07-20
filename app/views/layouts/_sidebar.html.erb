@@ -20,8 +20,8 @@
                     <%= render partial: 'categories/category', collection: current_owner.categories.uniq %>
                 </ul>
                 <%= form_tag ('/categories') do %>
-                    <%= text_field_tag :title, '', class: 'text-field', placeholder: 'New category' %>
-                    <%= submit_tag 'Add Category', class: 'btn-secondary' %>
+                    <%= text_field_tag :title, '', class: 'text-field-sidebar', placeholder: 'New category' %>
+                    <%= submit_tag 'Add', class: 'btn-secondary' %>
                 <% end %>
         </ul>
     </div>
