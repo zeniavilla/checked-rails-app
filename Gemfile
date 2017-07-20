@@ -36,6 +36,7 @@ gem 'font-awesome-rails'
 gem 'icomoon-rails'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'jquery-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
