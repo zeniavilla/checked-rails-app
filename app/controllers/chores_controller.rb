@@ -4,6 +4,8 @@ class ChoresController < ApplicationController
     
     def index
         @chores = current_user.my_active_chores
+        @chore = Chore.new
+        @category = Category.find_or_create_by(title: "Uncategorized")
     end
     
     def new
@@ -15,7 +17,11 @@ class ChoresController < ApplicationController
         @chore = user.chores.build(chore_params)
         if @chore.save
             flash[:success] = "Successfully saved chore."
-            redirect_to category_chore_path(@chore.category_id, @chore)
+            respond_to do |format|
+                format.html { redirect_to category_chore_path(@chore.category_id, @chore) }
+                format.json { render json: @chore }
+            end
+            
         else
             render :new
         end
@@ -23,6 +29,10 @@ class ChoresController < ApplicationController
 
     def show
         current_owner_only
+        respond_to do |format|
+            format.html { render 'show' }
+            format.json { render json: @chore }
+        end
     end
 
     def edit
