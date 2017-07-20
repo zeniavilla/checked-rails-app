@@ -51,5 +51,14 @@
         <td>{{user.name}}</td>
         <td>{{formatTime durationEndDate "dddd, DD MMMM YYYY"}}</td>
         <td>Every {{frequencyAmount}} {{frequencyInterval}}</td>
+        <td>
+            <a class="check-button" title="Mark as complete" rel="nofollow" data-method="post" href="/categories/{{category.id}}/chores/{{id}}/checked"><i class="fa fa-check-circle" aria-hidden="true"></i></a>
+        </td>
+        <td>
+            <a class="btn-green" title="Edit chore" href="/categories/{{category.id}}/chores/{{id}}/edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+        </td>
+        <td>
+            <a class="btn-red" title="Delete chore" rel="nofollow" data-method="delete" href="/categories/{{category.id}}/chores/{{id}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+        </td>
     </tr>
 </script>
