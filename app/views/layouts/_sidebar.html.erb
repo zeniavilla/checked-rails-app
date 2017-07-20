@@ -15,10 +15,29 @@
             </li>
             <li><%= link_to "My Chores", chores_path %></li>
             <li>Categories:</li>
-                <ul>
+                <ul class="js-categories">
                     <li><%= link_to "All", categories_path %></li>
                     <%= render partial: 'categories/category', collection: current_owner.categories.uniq %>
                 </ul>
+                <%= form_tag ('/categories') do %>
+                    <%= text_field_tag :title, '', class: 'text-field', placeholder: 'New category' %>
+                    <%= submit_tag 'Add Category', class: 'btn-secondary' %>
+                <% end %>
         </ul>
     </div>
 <% end %>
+
+<script type="text/javascript" charset="utf-8">
+    $(function() {
+        $('form').submit(function(event) {
+            event.preventDefault();
+            var values = $(this).serialize();
+
+            var newCategory = $.post('/categories', values)
+            newCategory.done(function(data) {
+                console.log(data.id)
+                $('.js-categories').append(`<li> <a href="/categories/${data.id}">${data.title}</a> </li>`)
+            })
+        })
+    })
+</script>
