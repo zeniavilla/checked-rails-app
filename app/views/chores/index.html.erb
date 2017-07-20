@@ -36,13 +36,20 @@
     <% end %>
 </div>
 
+<script type="text/javascript">
+    Handlebars.registerHelper('formatTime', function (date, format) {
+        var mmnt = moment(date);
+        return mmnt.format(format);
+    });
+</script>
+
 <script id="chore-template" type="text/x-handlebars-template">
     <tr>
         <td><a href="/categories/{{category.id}}/chores/{{id}}"><div class="category-color-circle"></div></a></td>
         <td>{{title}}</td>
         <td>{{category.title}}</td>
         <td>{{user.name}}</td>
-        <td>{{durationEndDate}}</td>
+        <td>{{formatTime durationEndDate "dddd, DD MMMM YYYY"}}</td>
         <td>Every {{frequencyAmount}} {{frequencyInterval}}</td>
     </tr>
 </script>
