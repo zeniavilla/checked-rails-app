@@ -70,17 +70,22 @@ nav img {
 
 /* forms */
 
-.text-field, select, .text-field-sidebar {
+.text-field, .main-select, .text-field-sidebar, .text-field-table, .form-select {
     border-left: none;
     border-right: none;
     border-top: none;
     border-bottom: 1px solid #c7c9cc;
     height: 40px;
-    padding-left: 20px;
 }
 
-.text-field, select {
+.text-field-table {
+    font: 300 1em/100% Lato, sans-serif;
+    width: 95%;
+}
+
+.text-field, .main-select {
     font: 300 1.3em/100% Lato, sans-serif;
+    padding-left: 20px;
     width: 300px;
 }
 
@@ -90,13 +95,18 @@ nav img {
     width: 75%; 
 }
 
-select {
+.form-select {
+    background: #fff;
+    color: #757575;
+}
+
+.main-select {
     background: #fff;
     color: #757575;
     width: 320px;
 }
 
-select#chore_frequency_interval {
+.main-select#chore_frequency_interval {
     margin-left: 50px;
 }
 
