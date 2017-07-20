@@ -1,6 +1,6 @@
 class Chore < ApplicationRecord
   belongs_to :user, required: false
-  belongs_to :category, optional: false
+  belongs_to :category, required: false
 
   after_initialize :set_defaults
 
