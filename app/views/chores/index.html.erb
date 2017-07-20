@@ -38,10 +38,10 @@
 
 <script id="chore-template" type="text/x-handlebars-template">
     <tr>
-        <td></td>
+        <td><a href="/categories/{{category.id}}/chores/{{id}}"><div class="category-color-circle"></div></a></td>
         <td>{{title}}</td>
-        <td>{{categoryTitle}}</td>
-        <td>{{userName}}</td>
+        <td>{{category.title}}</td>
+        <td>{{user.name}}</td>
         <td>{{durationEndDate}}</td>
         <td>Every {{frequencyAmount}} {{frequencyInterval}}</td>
     </tr>
