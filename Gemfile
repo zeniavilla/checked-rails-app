@@ -38,6 +38,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'jquery-rails'
 gem 'active_model_serializers'
+gem 'handlebars_assets'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
