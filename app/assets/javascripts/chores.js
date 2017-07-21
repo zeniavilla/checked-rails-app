@@ -8,6 +8,17 @@ function Chore(attributes) {
         this.category = { 'id': attributes.category.id, 'title': attributes.category.title };
 }
 
+Chore.success = function(json) {
+    var chore = new Chore(json)
+    
+    var choreTd = chore.renderTd()
+
+    $('table').append(choreTd)
+}
+Chore.error = function(response) {
+    console.log("Broken", response)
+}
+
 $(function() {
     Chore.templateSource = $('#chore-template').html();
     Chore.template = Handlebars.compile(Chore.templateSource);
@@ -47,15 +58,7 @@ $(function() {
             data: params,
             dataType: 'json'
         })
-        .success(function(json) {
-            var chore = new Chore(json);
-            
-            var choreTd = chore.renderTd();
-
-            $('table').append(choreTd)
-        })
-        .error(function(response) {
-            console.log("Broken", response);
-        });
+        .success(Chore.success)
+        .error(Chore.error);
     });
 });
