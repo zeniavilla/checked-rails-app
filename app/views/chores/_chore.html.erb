@@ -1,5 +1,5 @@
 <tr>
-    <td><%= link_to "<div class=\"category-color-circle\"></div>".html_safe,category_chore_path(chore.category.id, chore.id) %></td>
+    <td><%= link_to "<div class=\"category-color-circle\"></div>".html_safe, category_chore_path(chore.category.id, chore.id), {class: "choreid-#{chore.id}"} %></td>
     <td><%= chore.title %></td>
     <td><%= chore.category.title %></td>
     <td><%= chore.user.name %></td>
