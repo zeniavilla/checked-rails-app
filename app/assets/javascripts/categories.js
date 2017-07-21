@@ -16,6 +16,7 @@ $(function() {
                     var choreTd = chore.renderTd();
 
                     $('table').append(choreTd);
+                    $('.js-chores-title').text('All Chores')
                 }
             });
         });
