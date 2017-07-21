@@ -9,13 +9,14 @@ $(function() {
         })
         .done(function(json) {
             json.forEach(function(obj) {
+                
+                if ($(".choreid-" + obj.id).length === 0) {
                     var chore = new Chore(obj);
-                    // debugger
+                    
                     var choreTd = chore.renderTd();
 
-                // if (!$("table:contains(" + obj.user.name + ")")) {
                     $('table').append(choreTd);
-                // }
+                }
             });
         });
     });
