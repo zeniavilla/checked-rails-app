@@ -3,6 +3,10 @@ class CategoriesController < ApplicationController
     
     def index
         @chores = current_owner.my_active_chores
+        respond_to do |format|
+            format.html { render 'index' }
+            format.json { render json: @chores }
+        end
     end
 
     def show
