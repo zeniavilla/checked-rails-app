@@ -7,7 +7,7 @@ $(function() {
             dataType: 'json',
             method: 'GET'
         })
-        .done(function(json) {
+        .success(function(json) {
             json.forEach(function(obj) {
                 
                 if ($(".choreid-" + obj.id).length === 0) {
@@ -19,6 +19,9 @@ $(function() {
                     $('.js-chores-title').text('All Chores')
                 }
             });
+        })
+        .error(function(response) {
+            console.log("Broken", response)
         });
     });
 });

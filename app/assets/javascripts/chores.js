@@ -47,12 +47,15 @@ $(function() {
             data: params,
             dataType: 'json'
         })
-        .done(function(json) {
+        .success(function(json) {
             var chore = new Chore(json);
             
             var choreTd = chore.renderTd();
 
             $('table').append(choreTd)
+        })
+        .error(function(response) {
+            console.log("Broken", response);
         });
     });
 });
