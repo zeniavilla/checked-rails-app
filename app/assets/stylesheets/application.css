@@ -254,6 +254,18 @@ nav ul li a:hover {
     padding-bottom: 11px;
 }
 
+a.js-user-link {
+    color: #09c290;
+}
+
+ul[class^="js-user-info"] {
+    padding-left: 0;
+}
+
+ul[class^="js-user-info-"] li {
+    list-style: none;
+}
+
 /* buttons */
 
 .check-button i {
