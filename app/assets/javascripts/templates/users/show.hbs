@@ -1,0 +1,7 @@
+<li>{{email}}</li>
+{{#if chore.lastCompleted}}
+    <li>Last chore completed on {{formatTime chore.lastCompleted "MMMM DD, YYYY"}}</li>
+{{else}}
+    <li>Last chore completed: No completed chores yet</li>
+{{/if}}
+<li>Chores Completed: {{chore.numCompleted}}</li>
