@@ -2,8 +2,7 @@ function User(attributes) {
     this.id = attributes.id;
     this.name = attributes.name;
     this.email = attributes.email;
-    this.lastChoreDate = lastCompletedChore(attributes);
-    this.completedChores = numCompletedChores(attributes);
+    this.chore = { 'lastCompleted': lastCompletedChore(attributes), 'numCompleted': numCompletedChores(attributes) }
 }
 
 var numCompletedChores = attributes => {
@@ -25,3 +24,20 @@ var lastCompletedChore = attributes => {
     })
     return lastDate;
 }
+
+$(function() {
+    
+    var context = {
+        id: 1,
+        name: "Bruce Wayne",
+        email: "bruce@batman.com",
+        chore: {
+            lastCompleted: "2017-07-20T22:53:33.597Z",
+            numCompleted: 10
+        }
+    }
+
+    User.prototype.renderLi = function() {
+        return HandlebarsTemplates['users/show'](this)
+    }
+})
