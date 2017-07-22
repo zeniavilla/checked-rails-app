@@ -1,1 +1,2 @@
-<li><%= user.name %> | <%= pluralize(num_chores(user), 'chore') %></li>
+<li><%= link_to user.name, profile_path(user), class: 'js-user-link' %> | <%= pluralize(num_chores(user), 'chore') %></li>
+<ul class="js-user-info"></ul>
