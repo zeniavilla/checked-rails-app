@@ -21,7 +21,7 @@ Chore.error = function(response) {
 
 $(function() {
     Chore.templateSource = $('#chore-template').html();
-    Chore.template = Handlebars.compile(Chore.templateSource);
+    // Chore.template = Handlebars.compile(Chore.templateSource);
     
     var context = {
         id: 4,
@@ -37,10 +37,12 @@ $(function() {
         frequencyAmount: 2, 
         frequencyInterval: 'days'
     }
-    Chore.template(context)
+    // Chore.template(context)
+    
 
+    // Chore.template = HandlebarsTemplates['chores/index']({chore: context});
     Chore.prototype.renderTd = function() {
-        return Chore.template(this);
+        return HandlebarsTemplates['chores/index'](this);
     }
 })
     
