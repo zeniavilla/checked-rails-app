@@ -9,11 +9,13 @@ $(function(){
                 method: 'GET'
             })
             .success(function(json) {
-                var user = new User(json);
+                if ($("ul.team-users:contains(" + json.email + ")").length === 0) {
+                    var user = new User(json);
 
-                var userLi = user.renderLi();
+                    var userLi = user.renderLi();
 
-                $('.js-user-info-' + user.id).append(userLi);
+                    $('.js-user-info-' + user.id).append(userLi);
+                }
             })
             .error(function(response) {
                 console.log("Broken", response)
