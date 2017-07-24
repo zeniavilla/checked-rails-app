@@ -17,21 +17,26 @@ Chore.success = function(json) {
     $('#new_chore')[0].reset()
     $('.js-add-chore i').removeClass('green-background')
 }
+
 Chore.error = function(response) {
     console.log("Broken", response)
 }
 
 $(function() {
+    setChoreHandlebarsTemplate();
+    newChore();
+    formButtonOnInput();
+});
+
+var setChoreHandlebarsTemplate = () => {
     Chore.templateSource = $('#chore-template').html();
 
     Chore.prototype.renderTd = function() {
         return HandlebarsTemplates['chores/index'](this);
     }
-})
-    
+}
 
-$(function() {
-
+var newChore = () => {
     $("form").on('submit', function(event) {
         event.preventDefault();
         var params = $(this).serialize();
@@ -46,9 +51,9 @@ $(function() {
         .success(Chore.success)
         .error(Chore.error);
     });
-});
+}
 
-$(function() {
+var formButtonOnInput = () => {
     $('#chore_title').on('input',function(e){
         if ($('#chore_title').val().length) {
             $(".js-add-chore i").addClass('green-background');
@@ -56,4 +61,4 @@ $(function() {
             $('.js-add-chore i').removeClass('green-background');
         }
     });
-});
+}
