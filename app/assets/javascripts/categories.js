@@ -13,20 +13,10 @@ var viewAllCategories = () => {
             method: 'GET'
         })
         .success(function(json) {
-            json.forEach(function(obj) {
-                
-                if ($(".choreid-" + obj.id).length === 0) {
-                    var chore = new Chore(obj);
-                    
-                    var choreTd = chore.renderTd();
+            json.forEach(Chore.success);
 
-                    $('table').append(choreTd);
-                    $('.js-chores-title').text('All Chores')
-                }
-            });
+            $('.js-chores-title').text('All Chores')
         })
-        .error(function(response) {
-            console.log("Broken", response)
-        });
+        .error(Chore.error);
     });
 }
