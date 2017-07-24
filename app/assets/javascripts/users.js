@@ -43,10 +43,26 @@ var lastCompletedChore = attributes => {
 
 $(function() {
     setUserHandlebarsTemplate();
+    setUserJsModel();
 })
 
 var setUserHandlebarsTemplate = () => {
     User.prototype.renderLi = function() {
         return HandlebarsTemplates['users/show'](this)
     }
+}
+
+var setUserJsModel = () => {
+    $(".js-user-link").on('click', function(e) {
+        e.preventDefault()
+        var path = this.href;
+
+        $.ajax({
+            url: path,
+            dataType: 'json',
+            method: 'GET'
+        })
+        .success(User.success)
+        .error(User.error)
+    })
 }
