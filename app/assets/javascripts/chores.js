@@ -14,6 +14,8 @@ Chore.success = function(json) {
     var choreTd = chore.renderTd()
 
     $('table').append(choreTd)
+    $('#new_chore')[0].reset()
+    $('.js-add-chore i').removeClass('green-background')
 }
 Chore.error = function(response) {
     console.log("Broken", response)
