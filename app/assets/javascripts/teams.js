@@ -1,4 +1,8 @@
 $(function(){
+    setUserJsModel();
+});
+
+    var setUserJsModel = () => {
         $(".js-user-link").on('click', function(e) {
             e.preventDefault()
             var path = this.href;
@@ -23,4 +27,4 @@ $(function(){
                 console.log("Broken", response)
             })
         })
-    });
+    }
