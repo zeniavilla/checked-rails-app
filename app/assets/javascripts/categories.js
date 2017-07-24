@@ -1,9 +1,10 @@
 $(function() {
     $('.js-all-categories').on('click', function(event) {
         event.preventDefault();
-
+        var path = event['currentTarget']['href']
+        
         $.ajax({
-            url: '/categories',
+            url: path,
             dataType: 'json',
             method: 'GET'
         })
