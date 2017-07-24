@@ -16,7 +16,7 @@ class ChoresController < ApplicationController
         user = User.find_by(id: params[:chore][:user_id]) || current_user
         @chore = user.chores.build(chore_params)
         if @chore.save
-            flash[:success] = "Successfully saved chore."
+            # flash[:success] = "Successfully saved chore."
             respond_to do |format|
                 format.html { redirect_to category_chore_path(@chore.category_id, @chore) }
                 format.json { render json: @chore }
