@@ -9,6 +9,8 @@ function Chore(attributes) {
 }
 
 Chore.success = function(json) {
+    setChoreHandlebarsTemplate();
+
     if (!$(".choreid-" + json.id).length) {
         var chore = new Chore(json)
         
@@ -25,9 +27,7 @@ Chore.error = function(response) {
 }
 
 $(function() {
-    setChoreHandlebarsTemplate();
     newChore();
-    formButtonOnInput();
 });
 
 var setChoreHandlebarsTemplate = () => {
@@ -39,7 +39,9 @@ var setChoreHandlebarsTemplate = () => {
 }
 
 var newChore = () => {
-    $("form").on('submit', function(event) {
+    formButtonOnInput();
+
+    $("form#new_chore").on('submit', function(event) {
         event.preventDefault();
         var params = $(this).serialize();
         var action = this.action;
