@@ -2,9 +2,7 @@
 
 <div class="col-med">
     <h2 class="js-chores-title"><%= current_user.name %>'s Chores</h2>
-    <% if !@chores || @chores.empty? %>
-        <%= render 'shared/add_chore_button' %>
-    <% else %>
+    
 
         <%= render 'categories/category_header' %>
         <tr>
@@ -31,9 +29,11 @@
                 <% end %>
             <% end %>
         </tr>
-        <%= render @chores %>
+        <% if @chores %>
+            <%= render @chores %>
+        <% end %>
         <tr class="js-chore"></tr>
         </table>
 
-    <% end %>
+   
 </div>
