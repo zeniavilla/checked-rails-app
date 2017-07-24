@@ -71,7 +71,6 @@ $(function() {
             $(".js-add-chore i").addClass('green-background');
         } else {
             $('.js-add-chore i').removeClass('green-background');
-            $('.js-add-chore i').addClass('btn-green i')
         }
     });
 });
