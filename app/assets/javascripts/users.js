@@ -26,18 +26,11 @@ var lastCompletedChore = attributes => {
 }
 
 $(function() {
-    
-    var context = {
-        id: 1,
-        name: "Bruce Wayne",
-        email: "bruce@batman.com",
-        chore: {
-            lastCompleted: "2017-07-20T22:53:33.597Z",
-            numCompleted: 10
-        }
-    }
+    setUserHandlebarsTemplate();
+})
 
+var setUserHandlebarsTemplate = () => {
     User.prototype.renderLi = function() {
         return HandlebarsTemplates['users/show'](this)
     }
-})
+}
