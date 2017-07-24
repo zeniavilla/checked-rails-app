@@ -5,6 +5,22 @@ function User(attributes) {
     this.chore = { 'lastCompleted': lastCompletedChore(attributes), 'numCompleted': numCompletedChores(attributes) }
 }
 
+User.success = function(json) {
+    if ($("ul.team-users:contains(" + json.email + ")").length === 0) {
+        var user = new User(json);
+
+        var userLi = user.renderLi();
+
+        $('.js-user-info-' + json.id).append(userLi);
+    } else {
+        $('.js-user-info-' + json.id).text("")
+    }
+}
+
+User.error = function(response)  {
+    console.log("Broken", response)
+}
+
 var numCompletedChores = attributes => {
     var numChores = 0;
     attributes.chores.forEach(function(chore) {
