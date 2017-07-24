@@ -14,7 +14,9 @@ $(function(){
 
                     var userLi = user.renderLi();
 
-                    $('.js-user-info-' + user.id).append(userLi);
+                    $('.js-user-info-' + json.id).append(userLi);
+                } else {
+                    $('.js-user-info-' + json.id).text("")
                 }
             })
             .error(function(response) {
