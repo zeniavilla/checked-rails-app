@@ -13,7 +13,7 @@
                 <%= fa_icon "plus", title: "Add chore" %>
             <% end %>
             </li>
-            <li><%= link_to "My Chores", chores_path %></li>
+            <li><%= link_to "My Chores", chores_path, class: 'js-my-chores' %></li>
             <li>Categories:</li>
                 <ul class="js-categories">
                     <li><%= link_to "All", categories_path, class: 'js-all-categories' %></li>
