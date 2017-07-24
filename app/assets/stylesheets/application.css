@@ -321,6 +321,12 @@ ul[class^="js-user-info-"] li {
     background: #09c290;
 }
 
+button.btn-green {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
 .btn-facebook {
     background: #4267b2;
     border: none;

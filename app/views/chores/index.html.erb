@@ -26,7 +26,9 @@
                 <td><%= f.number_field :frequency_amount, placeholder: "Every 2", class: "text-field-table" %></td>
                 <td><%= f.select :frequency_interval, [["select", ""],"days", "weeks", "months", "years"], {}, {class: 'form-select'} %></td>
 
-                <td><%= f.submit 'Add', class: "btn-green" %></td>
+                <td><%= f.button '', class: 'btn-green' do %>
+                    <%= fa_icon "plus", title: "Add chore" %>
+                <% end %>
             <% end %>
         </tr>
         <%= render @chores %>
