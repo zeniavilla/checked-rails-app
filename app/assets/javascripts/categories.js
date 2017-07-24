@@ -1,4 +1,8 @@
 $(function() {
+    viewAllCategories();
+});
+
+var viewAllCategories = () => {
     $('.js-all-categories').on('click', function(event) {
         event.preventDefault();
         var path = event['currentTarget']['href']
@@ -25,4 +29,4 @@ $(function() {
             console.log("Broken", response)
         });
     });
-});
+}
