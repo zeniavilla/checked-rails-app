@@ -23,12 +23,8 @@ class CategoriesController < ApplicationController
 
     def create
         @category = current_user.categories.create(category_params)
-        # if @category.save
-        #     flash[:success] = "Category successfully created"
-            render json: @category, status: 201
-        # else
-        #     render :new
-        # end
+
+        render json: @category, status: 201
     end
 
     private

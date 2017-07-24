@@ -23,26 +23,7 @@ Chore.error = function(response) {
 
 $(function() {
     Chore.templateSource = $('#chore-template').html();
-    // Chore.template = Handlebars.compile(Chore.templateSource);
-    
-    var context = {
-        id: 4,
-        title: 'Chore',
-        category: {
-            id: 5,
-            title: 'Cool'
-        },
-        user: {
-            name: 'Steve Jobs'
-        }, 
-        durationEndDate: '2017-07-28T00:00:00.000Z', 
-        frequencyAmount: 2, 
-        frequencyInterval: 'days'
-    }
-    // Chore.template(context)
-    
 
-    // Chore.template = HandlebarsTemplates['chores/index']({chore: context});
     Chore.prototype.renderTd = function() {
         return HandlebarsTemplates['chores/index'](this);
     }
