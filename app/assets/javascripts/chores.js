@@ -64,3 +64,14 @@ $(function() {
         .error(Chore.error);
     });
 });
+
+$(function() {
+    $('#chore_title').on('input',function(e){
+        if ($('#chore_title').val().length) {
+            $(".js-add-chore i").addClass('green-background');
+        } else {
+            $('.js-add-chore i').removeClass('green-background');
+            $('.js-add-chore i').addClass('btn-green i')
+        }
+    });
+});

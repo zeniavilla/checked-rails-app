@@ -302,7 +302,7 @@ ul[class^="js-user-info-"] li {
     width: 86%;
 }
 
-.btn-red i, .btn-green i {
+.btn-red i, .btn-green i, .js-add-chore i {
     background: #c7c9cc;
     border-radius: 0.8em; 
     color: #fff;
@@ -317,11 +317,11 @@ ul[class^="js-user-info-"] li {
     background: #dc143c;
 }
 
-.btn-green i:hover {
+.btn-green i:hover, i.green-background {
     background: #09c290;
 }
 
-button.btn-green {
+button.js-add-chore {
     background: none;
     border: none;
     cursor: pointer;
