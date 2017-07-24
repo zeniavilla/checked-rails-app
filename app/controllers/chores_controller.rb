@@ -6,6 +6,10 @@ class ChoresController < ApplicationController
         @chores = current_user.my_active_chores
         @chore = Chore.new
         @category = Category.find_or_create_by(title: "Uncategorized")
+        respond_to do |format|
+            format.html { render 'index' }
+            format.json { render json: @chores }
+        end
     end
     
     def new
