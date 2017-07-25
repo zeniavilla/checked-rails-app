@@ -2,7 +2,7 @@ function User(attributes) {
     this.id = attributes.id;
     this.name = attributes.name;
     this.email = attributes.email;
-    this.chore = { 'lastCompleted': lastCompletedChore(attributes), 'numCompleted': numCompletedChores(attributes) }
+    this.chore = { 'lastCompleted': lastCompletedChore(attributes), 'numCompleted': numCompletedChores(attributes), 'nextDueChore': nextDueChore(attributes) }
 }
 
 User.success = function(json) {
@@ -39,6 +39,20 @@ var lastCompletedChore = attributes => {
         }
     })
     return lastDate;
+}
+
+var nextDueChore = attributes => {
+    var nextDate = 'Z';
+    if (!attributes.chores.length) {
+        return undefined
+    }
+    attributes.chores.forEach(function(chore) {
+        if(chore.active && chore.duration_end_date < nextDate) {
+            nextDate = chore.duration_end_date;
+        }
+    })
+    
+    return nextDate;
 }
 
 $(function() {
