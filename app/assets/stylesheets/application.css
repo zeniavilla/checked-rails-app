@@ -302,7 +302,7 @@ ul[class^="js-user-info-"] li {
     width: 86%;
 }
 
-.btn-red i, .btn-green i, .js-add-chore i {
+.btn-green i, .js-add-chore i {
     background: #c7c9cc;
     border-radius: 0.8em; 
     color: #fff;
@@ -313,7 +313,18 @@ ul[class^="js-user-info-"] li {
     width: 1.45em;
 }
 
-.btn-red i:hover {
+button#delete_chore_icon i.fa.fa-trash {
+    background: #c7c9cc;
+    border-radius: 0.8em; 
+    color: #fff;
+    font-size: 1.69em;
+    line-height: 1.55em;
+    margin: 20px 10px;
+    text-align: center;
+    width: 1.55em;
+}
+
+button#delete_chore_icon i.fa.fa-trash:hover {
     background: #dc143c;
 }
 
@@ -321,7 +332,7 @@ ul[class^="js-user-info-"] li {
     background: #09c290;
 }
 
-button.js-add-chore {
+button.js-add-chore, button#delete_chore_icon {
     background: none;
     border: none;
     cursor: pointer;
