@@ -55,8 +55,7 @@ class ChoresController < ApplicationController
     
     def destroy
         @chore.destroy
-        flash[:success] = "Successfully deleted chore."
-        redirect_to chores_path
+        head :no_content
     end
 
     def checked
