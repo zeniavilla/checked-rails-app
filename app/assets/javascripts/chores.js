@@ -1,11 +1,20 @@
+'use strict'
+
 function Chore(attributes) {
-        this.title = attributes.title;
-        this.id = attributes.id;
-        this.frequencyAmount = attributes.frequency_amount;
-        this.frequencyInterval = attributes.frequency_interval;
-        this.durationEndDate = attributes.duration_end_date;
-        this.user = { 'name': attributes.user.name };
-        this.category = { 'id': attributes.category.id, 'title': attributes.category.title };
+   // for (var key in attributes) {
+        //this[key] = attributes[key]
+   //  }
+    this.title = attributes.title;
+    this.id = attributes.id;
+    this.frequencyAmount = attributes.frequency_amount;
+    this.frequencyInterval = attributes.frequency_interval;
+    this.durationEndDate = attributes.duration_end_date;
+    this.user = attributes.user;
+    this.category = attributes.category;
+}
+
+Chore.prototype.renderTd = function() {
+    return HandlebarsTemplates['chores/index'](this);
 }
 
 Chore.success = function(json) {
@@ -30,18 +39,16 @@ $(function() {
     newChore();
 });
 
-var setChoreHandlebarsTemplate = () => {
+const setChoreHandlebarsTemplate = () => {
     Chore.templateSource = $('#chore-template').html();
-
-    Chore.prototype.renderTd = function() {
-        return HandlebarsTemplates['chores/index'](this);
-    }
 }
 
-var newChore = () => {
+
+
+const newChore = () => {
     formButtonOnInput();
 
-    $("form#new_chore").on('submit', function(event) {
+    $("form.table_new_chore").on('submit', function(event) {
         event.preventDefault();
         var params = $(this).serialize();
         var action = this.action;
@@ -57,7 +64,7 @@ var newChore = () => {
     });
 }
 
-var formButtonOnInput = () => {
+const formButtonOnInput = () => {
     $('#chore_title').on('input',function(e){
         if ($('#chore_title').val().length) {
             $(".js-add-chore i").addClass('green-background');
