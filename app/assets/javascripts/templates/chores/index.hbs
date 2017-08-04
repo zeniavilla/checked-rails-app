@@ -24,6 +24,6 @@
             <a class="btn-green" title="Edit chore" href="/categories/{{category.id}}/chores/{{id}}/edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>
         </td>
         <td>
-            <a class="btn-red" title="Delete chore" rel="nofollow" data-method="delete" href="/categories/{{category.id}}/chores/{{id}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+            <button id="delete_chore_icon" class="btn-red" title="Delete chore" rel="nofollow" data-method="DELETE" data-url="/categories/<%= chore.category.id %>/chores/<%= chore.id %>"><i class="fa fa-trash" aria-hidden="true"></i></button>
         </td>
     </tr>
