@@ -6,7 +6,7 @@
 
         <%= render 'categories/category_header' %>
         <tr>
-            <%= form_for [@category, @chore] do |f| %>
+            <%= form_for [@category, @chore], html: {class: 'table_new_chore'} do |f| %>
                 <td></td>
 
                 <td><%= f.text_field :title, placeholder: "Chore", class: "text-field-table" %></td>
