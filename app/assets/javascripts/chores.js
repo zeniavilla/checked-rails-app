@@ -1,9 +1,6 @@
 'use strict'
 
 function Chore(attributes) {
-   // for (var key in attributes) {
-        //this[key] = attributes[key]
-   //  }
     this.title = attributes.title;
     this.id = attributes.id;
     this.frequencyAmount = attributes.frequency_amount;
@@ -24,7 +21,6 @@ Chore.success = function(json) {
         var chore = new Chore(json)
         
         var choreTd = chore.renderTd()
-
         $('table').append(choreTd)
         $('#new_chore')[0].reset()
         $('.js-add-chore i').removeClass('green-background')
