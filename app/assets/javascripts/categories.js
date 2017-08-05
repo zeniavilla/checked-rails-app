@@ -32,7 +32,7 @@ const addDeleteChoreIconListeners = () => {
         var method = this.dataset.method;
         var path = this.dataset.url;
         var delete_link_row = $(this).parents('tr')
-
+        
         $.ajax ({
             url: path,
             method: 'DELETE',
@@ -47,3 +47,9 @@ const addDeleteChoreIconListeners = () => {
 
     })
 }
+
+
+        // grab url from this 
+        // ccreate function for Ajax .delete 
+        // after successfull return from server 
+            // -> remove this from the DOM
