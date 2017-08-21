@@ -13,4 +13,6 @@ production:
   adapter: postgresql
   database: checked_production
   pool: 5
+  username: zenia
+  password: password
   timeout: 5000

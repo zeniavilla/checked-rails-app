@@ -1,5 +1,3 @@
-'use strict'
-
 function Chore(attributes) {
     this.title = attributes.title;
     this.id = attributes.id;
@@ -35,13 +33,13 @@ $(function() {
     newChore();
 });
 
-const setChoreHandlebarsTemplate = () => {
+function setChoreHandlebarsTemplate() {
     Chore.templateSource = $('#chore-template').html();
 }
 
 
 
-const newChore = () => {
+function newChore() {
     formButtonOnInput();
 
     $("form.table_new_chore").on('submit', function(event) {
@@ -60,7 +58,7 @@ const newChore = () => {
     });
 }
 
-const formButtonOnInput = () => {
+function formButtonOnInput() {
     $('#chore_title').on('input',function(e){
         if ($('#chore_title').val().length) {
             $(".js-add-chore i").addClass('green-background');
