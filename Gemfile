@@ -43,6 +43,7 @@ gem 'jquery-rails'
 gem 'active_model_serializers'
 gem 'handlebars_assets'
 gem 'momentjs-rails'
+gem 'dotenv-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
