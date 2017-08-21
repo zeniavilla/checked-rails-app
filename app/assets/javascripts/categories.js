@@ -46,9 +46,3 @@ function addDeleteChoreIconListeners() {
 
     })
 }
-
-
-        // grab url from this 
-        // ccreate function for Ajax .delete 
-        // after successfull return from server 
-            // -> remove this from the DOM
