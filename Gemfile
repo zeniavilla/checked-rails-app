@@ -14,7 +14,6 @@ gem 'rails', '~> 5.1.1'
 group :production do
   gem 'pg'
 end
-
 # group :development, :test do
 #   gem 'sqlite3'
 # end
@@ -38,7 +37,6 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'font-awesome-rails'
-gem 'icomoon-rails'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'jquery-rails'

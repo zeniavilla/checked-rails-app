@@ -84,9 +84,6 @@ GEM
       tilt (>= 1.2)
     hashie (3.5.5)
     i18n (0.8.4)
-    icomoon-rails (0.1.0)
-      railties (>= 3.1.1)
-      sass-rails (>= 3.1.1)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
@@ -221,7 +218,6 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   font-awesome-rails
   handlebars_assets
-  icomoon-rails
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
