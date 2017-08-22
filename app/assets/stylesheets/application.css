@@ -19,6 +19,15 @@
 
 /* global */
 
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100%;
+}
+
 a {
     cursor: pointer;
     text-decoration: none;
@@ -416,4 +425,38 @@ h3 i.fa {
     border-radius: 50%;
     padding: 20px;
     box-shadow: 5px 5px 10px #f2f2f2;
+}
+
+/* footer */
+
+footer {
+    background-color: #ececec;
+    bottom: 0;
+    border-top: 1px solid #f2f2f2;
+    color: #757575;
+    left: 0;
+    margin: 0 auto;
+    padding: 16px 25px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+}
+
+footer .brand-name {
+    float: left;
+}
+
+footer .footer-links {
+    float: right;
+}
+
+.footer-links i {
+    color: #969696;
+}
+    .footer-links i:hover {
+        opacity: .7;
+    }
+
+.footer-links a {
+    margin-left: 25px;
 }
