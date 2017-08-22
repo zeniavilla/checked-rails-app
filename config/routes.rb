@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/sign_out', to: 'sessions#destroy'
   get '/sign_in', to: 'sessions#new'
   post 'sign_in', to: 'sessions#create'
-  get '/auth/facebook/callback', to: 'sessions#create'
+  get '/auth/:provider/callback', to: 'sessions#create'
   get '/auth/failure', to: redirect('/')
 
   resources :categories, except: [:edit, :update, :destroy] do
