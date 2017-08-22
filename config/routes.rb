@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   #users
   resources :users, only: [:index, :create, :destroy, :update]
-  get 'users/sign_up', to: 'users#new'
+  get '/sign_up', to: 'users#new'
   get 'profile/:id', to: 'users#show', as: 'profile'
   get 'profile/:id/edit', to: 'users#edit', as: 'edit_profile'
   put 'profile/:id', to: 'users#update'

@@ -1,10 +1,8 @@
-'use strict'
-
 $(function() {
     viewAllCategories();
 });
 
-const viewAllCategories = () => {
+function viewAllCategories() {
     $('.js-all-categories').on('click', function(event) {
         event.preventDefault();
         
@@ -16,7 +14,8 @@ const viewAllCategories = () => {
             method: 'GET'
         })
         .success(function(json) {
-            json.forEach(Chore.success);
+            
+            (json) ? json.forEach(Chore.success) : false;
 
             $('.js-chores-title').text('All Chores')
             addDeleteChoreIconListeners();
@@ -25,7 +24,7 @@ const viewAllCategories = () => {
     });
 }
 
-const addDeleteChoreIconListeners = () => {
+function addDeleteChoreIconListeners() {
     $('button#delete_chore_icon').on('click', function(event) {
         event.preventDefault();
         
@@ -47,9 +46,3 @@ const addDeleteChoreIconListeners = () => {
 
     })
 }
-
-
-        // grab url from this 
-        // ccreate function for Ajax .delete 
-        // after successfull return from server 
-            // -> remove this from the DOM

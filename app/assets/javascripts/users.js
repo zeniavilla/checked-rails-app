@@ -21,7 +21,7 @@ User.error = function(response)  {
     console.log("Broken", response)
 }
 
-var numCompletedChores = attributes => {
+function numCompletedChores(attributes) {
     var numChores = 0;
     attributes.chores.forEach(function(chore) {
             if (!chore.active) {
@@ -31,7 +31,7 @@ var numCompletedChores = attributes => {
         return numChores;
 }
 
-var lastCompletedChore = attributes => {
+function lastCompletedChore(attributes) {
     var lastDate = '';
     attributes.chores.forEach(function(chore) {
         if (!chore.active && chore.updated_at > lastDate) {
@@ -41,7 +41,7 @@ var lastCompletedChore = attributes => {
     return lastDate;
 }
 
-var nextDueChore = attributes => {
+function nextDueChore(attributes) {
     var nextDate = 'Z';
     if (!attributes.chores.length) {
         return undefined
@@ -60,13 +60,13 @@ $(function() {
     setUserJsModel();
 })
 
-var setUserHandlebarsTemplate = () => {
+function setUserHandlebarsTemplate() {
     User.prototype.renderLi = function() {
         return HandlebarsTemplates['users/show'](this)
     }
 }
 
-var setUserJsModel = () => {
+function setUserJsModel() {
     $(".js-user-link").on('click', function(e) {
         e.preventDefault()
         var path = this.href;

@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  *= require font-awesome
- *= require icomoon-free/style
  */
 
 @import url('https://fonts.googleapis.com/css?family=Lato');
