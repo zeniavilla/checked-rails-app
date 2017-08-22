@@ -9,7 +9,7 @@ module ActiveChores
         if self.chores.empty?
             return nil
         else
-            self.chores.where("active IS ?", true)
+            self.chores.where("active IS true")
         end
     end
 end
