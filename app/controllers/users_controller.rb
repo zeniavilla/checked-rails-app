@@ -13,7 +13,7 @@ class UsersController < ApplicationController
         if @user.save
             session[:user_id] = @user.id
             flash[:success] = "Successfully signed up."
-            redirect_to chores_path
+            redirect_to edit_profile_path(@user)
         else
             render :new
         end
