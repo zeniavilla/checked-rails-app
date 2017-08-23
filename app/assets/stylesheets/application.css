@@ -433,7 +433,6 @@ footer {
     background-color: #ececec;
     bottom: 0;
     border-top: 1px solid #f2f2f2;
-    color: #757575;
     left: 0;
     margin: 0 auto;
     padding: 16px 25px;
@@ -450,8 +449,8 @@ footer .footer-links {
     float: right;
 }
 
-.footer-links i {
-    color: #969696;
+.footer-links i, .brand-name a {
+    color: #757575;
 }
     .footer-links i:hover {
         opacity: .7;
